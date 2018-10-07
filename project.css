@@ -1,0 +1,776 @@
+html, body {
+    font-family: Raleway, Avenir Next;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 225px;
+    background-color: white;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+#header #search-bar {
+    width: 80%;
+    height: 100%;
+    text-indent: 20px;
+    font-family: Raleway, Avenir Next;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#header #search-bar::placeholder {
+    opacity: 1;
+    font-weight: 400;
+    color: rgb(129, 126, 126);
+}
+
+#header #user-info {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#header #user-info #notifications {
+    margin: auto 0;
+    font-size: 20px;
+    color: rgb(161, 161, 161);
+}
+
+#header #user-info #notifications:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+#header #user-info #logout-button {
+    width: 80px;
+    height: 35px;
+    border: 1px solid royalblue;
+    color: rgba(85, 81, 81, 0.75);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 0;
+}
+
+#header #user-info #logout-button:hover {
+    background-color: royalblue;
+    color: white;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+    left: 0;
+    width: 225px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+#sidebar #logo-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(224, 222, 222, 0.3);
+}
+
+#sidebar #logo-box #logo {
+    width: 76px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 5px solid royalblue;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#project-workbench {
+    position: absolute;
+    height: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80px;
+    /* background-color: #DEE2E8; */
+    background-color: white;
+    overflow: scroll;
+}
+
+#project-workbench #workbench-tools {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#project-workbench #workbench-tools p {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(51, 50, 50);
+    margin: auto 0;
+    padding: 0 75px;
+}
+
+#project-workbench #workbench-tools #tools {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#project-workbench #workbench-tools #tools div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;   
+}
+
+#project-workbench #workbench-tools #tools div #workbench-view-grid, #project-workbench #workbench-tools #tools div #workbench-view-list {
+    color: rgb(161, 161, 161);
+    font-size: 17px;
+    margin: auto 0;
+}
+
+#project-workbench #workbench-tools #tools div #workbench-view-grid:hover, #project-workbench #workbench-tools #tools div #workbench-view-list:hover {
+    opacity: 0.8;
+    color: royalblue;
+    transition: 0.5s;
+}
+
+#project-workbench #workbench-tools #tools div #create-project-button {
+    width: 120px;
+    height: 35px;
+    background-color: royalblue;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+}
+
+#project-workbench #workbench-tools #tools div #create-project-button:hover {
+    opacity: 0.8;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+#project-workbench #workbench-cards-container {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    width: 275px;
+    height: 235px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 15px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.project-card .project-card-top {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-card .project-card-top .project-top-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-card .project-card-top .project-creation-date {
+    font-size: 11px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+    font-weight: 500;
+}
+
+.project-card .project-card-top .project-options-toggle-status {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card .project-card-top .project-options-toggle-status:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+.project-card .project-card-top .project-options-delete {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card .project-card-top .project-options-delete:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+.project-card .model-display {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 100%;
+    text-align: center;
+    background-color: #DEE2E8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.project-card .model-display p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    margin: auto 0;
+}
+
+.project-card .model-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    padding: 15px 0 5px 0;
+}
+
+.project-card .model-classes {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    color: rgb(51, 50, 50);
+}
+
+.project-card .model-status-node {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.project-card .model-training-status {
+    position: relative;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 5px 0;
+    color: rgba(121, 116, 116, 1);
+}
+
+.project-card .model-training-status i {
+    color: rgba(121, 116, 116, 1);
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.project-card .model-status {
+    position: relative;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 5px 0;
+    color: #10ac84;
+}
+
+.project-card .model-status i {
+    font-size: 10px;
+    padding: 0 5px;
+}
+
+.project-card .model-classes span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.project-card .model-type {
+    color: rgb(109, 102, 102);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    cursor: pointer;
+}
+
+.project-card .model-type i {
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.project-card .model-type:hover {
+    color: royalblue;
+    /* font-weight: bold; */
+    transition: 0.5s;
+}
+
+.project-card .model-divider {
+    width: 110px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#new-project-modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 700px;
+    height: 550px;
+    background-color: white;
+    z-index: 1000;
+    border-radius: 2px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#new-project-modal #new-project-modal-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#new-project-modal #new-project-modal-top #top-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+#new-project-modal #new-project-modal-top #save-project-button {
+    width: 80px;
+    height: 35px;
+    background-color: royalblue;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 10px;
+}
+
+#new-project-modal #new-project-modal-top #save-project-button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#new-project-modal #new-project-modal-top #cancel-button {
+    width: 80px;
+    height: 35px;
+    background-color: rgba(121, 116, 116, 0.3);
+    color: rgba(70, 66, 66, 0.74);
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 10px;
+}
+
+#new-project-modal #new-project-modal-top #cancel-button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#new-project-modal #new-project-modal-top #section-title {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 20px 50px;
+    margin: auto 0;
+    color: royalblue;
+}
+
+#new-project-modal #modal-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(224, 222, 222, 0.5);
+}
+
+#new-project-modal #project-form {
+    width: 100%;    
+    height: 50px;
+}
+
+#new-project-modal #project-form #project-title {
+    width: 200px;
+    height: 32px;
+    border-bottom: 1px solid rgba(65, 105, 225, 0.5);
+    font-family: Raleway, Avenir Next;
+    font-size: 15px;
+    font-weight: 500;
+    background: none;
+    margin: 0 50px;
+}
+
+#prompt {
+    font-size: 14px;
+    color: rgba(83, 79, 79, 0.75);
+    font-weight: 400;
+    padding: 30px 50px 5px 50px;
+}
+
+#project-datatype-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 50px;
+}
+
+.project-datatype-card {
+    width: 150px;
+    height: 125px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 15px 25px 10px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.project-datatype-card img {
+    height: 80px;
+    margin: 5px auto;
+}
+
+.project-datatype-card p {
+    font-size: 14px;
+    padding: 10px 0;
+    color: rgba(57, 58, 59, 0.75);
+    font-weight: 600;
+}
+
+.project-datatype-card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#images {
+    opacity: 1;
+}
+
+#audio, #text {
+    opacity: 0.65;
+}
+
+#training-data-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+#training-data-container #training-data-container-classcards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+#add-class-button {
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 15px 25px 10px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+#add-class-button i {
+    font-size: 27px;
+    color: rgba(133, 128, 128, 0.4);
+}
+
+#add-class-button p {
+    font-size: 15px;
+    color: rgba(133, 128, 128, 0.4);
+    padding: 10px 0 0 0;
+    font-weight: bold;
+}
+
+#add-class-button:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.training-data-card {
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 15px 25px 10px 5px;
+    text-align: center;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.training-data-card .tdc-top {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(212, 206, 206, 0.25);
+}
+
+.training-data-card .tdc-top .class-label {
+    width: 70%;
+    height: 35px;
+    background: none;
+    border-bottom: 1px solid rgba(65, 105, 225, 0.5);
+    font-family: Raleway, Avenir Next;
+    font-size: 13px;
+    color: rgba(57, 58, 59, 0.75);
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.training-data-card .tdc-top .class-instances {
+    font-size: 11px;
+    color: rgba(121, 116, 116, 0.75);
+    padding: 5px;
+}
+
+.training-data-card .tdc-bottom {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.training-data-card .tdc-bottom .file-choose {
+    display: none;
+}
+
+.training-data-card .tdc-bottom .upload-button {
+    width: 100px;
+    height: 35px;
+    background-color: royalblue;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 5px;
+}
+
+.training-data-card .tdc-bottom .upload-button i {
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+.training-data-card .tdc-bottom .upload-button:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.training-data-card .tdc-bottom .delete-button {
+    width: 35px;
+    height: 35px;
+    background-color: royalblue;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 5px;
+}
+
+.training-data-card .tdc-bottom .delete-button i {
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+.training-data-card .tdc-bottom .delete-button:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#project-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 700px;
+    height: 500px;
+    background-color: white;
+    z-index: 3000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    overflow: hidden;
+}
+
+#project-panel #panel-top {
+    width: 85%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px auto;
+    border-bottom: 2px solid #4169e1;
+}
+
+#project-panel #panel-top #panel-header {
+    font-size: 25px;
+    font-weight: bold;
+    width: auto;
+    width: 85%;
+    margin: auto 0;
+}
+
+#project-panel #panel-top #panel-close-button {
+    width: 80px;
+    height: 35px;
+    background-color: rgba(121, 116, 116, 0.3);
+    color: rgba(70, 66, 66, 0.6);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: Raleway, Avenir Next;
+    border-radius: 2px;
+    margin: auto 0;
+}
+
+#project-panel #panel-body {
+    width: 85%;
+    height: 350px;
+    background-color: red;
+    margin: 0 auto;
+    overflow: scroll;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.message-card {
+    position: fixed;
+    left: 40px;
+    bottom: 20px;
+    width: auto;
+    height: 50px;
+    z-index: 5000;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: royalblue;
+    padding: 0 20px;
+    margin: auto 0;
+}
+
+.message-card p i {
+    font-size: 15px;
+    padding: 0 7px 0 0;
+}
+
+.message-card.show {
+    visibility: visible;
+   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

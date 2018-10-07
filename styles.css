@@ -1,0 +1,678 @@
+html, body {
+    font-family: Google Sans;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-family: Google Sans;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#login-box {
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(247, 247, 247);
+    z-index: 2000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+}
+
+#login-box #logo-login {
+    width: 95px;
+    margin: 50px auto;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 13px;
+    border-bottom: 5px solid royalblue;
+}
+
+#login-box p {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+
+#login-box #back {
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 7px;
+    color: #888787;
+}
+
+#login-box #sign-in-name {
+    visibility: hidden;
+}
+
+#login-box #close-login-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: #888787;
+    cursor: pointer;
+}
+
+#login-box #sign-in-name, #login-box #sign-in-email, #login-box #sign-in-pwd {
+    position: relative;
+    width: 90%;
+    height: 42px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    font-family: Raleway;
+    background-color: none;
+}
+
+#login-box #sign-in-name::placeholder, #login-box #sign-in-email::placeholder, #login-box #sign-in-pwd::placeholder {
+    opacity: 1;
+    font-weight: 400;
+    font-size: 13px;
+    color: gray;
+}
+
+#login-box #buttons {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#login-box #buttons #sign-in-submit {
+    width: 135px;
+    height: 45px;
+    border: none;
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    background-color: royalblue;
+    border-radius: 5px;
+} 
+
+#login-box #sign-in-submit:hover {
+    opacity: 0.85;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#login-box #buttons #login-register-button {
+    padding: 0;
+    margin: auto 0;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: royalblue;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#register-box {
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(247, 247, 247);
+    z-index: 2000;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+}
+
+#register-box #logo-register {
+    width: 95px;
+    margin: 50px auto;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 35px;
+    border-bottom: 5px solid royalblue;
+}
+
+#loregistergin-box p {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+
+#register-box #back {
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 7px;
+    color: #888787;
+}
+
+#register-box #close-register-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: #888787;
+    cursor: pointer;
+}
+
+#register-box #sign-up-name, #register-box #sign-up-email, #register-box #sign-up-pwd {
+    position: relative;
+    width: 90%;
+    height: 42px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    font-family: Raleway;
+    background-color: none;
+}
+
+#register-box #sign-up-name::placeholder, #register-box #sign-up-email::placeholder, #register-box #sign-up-pwd::placeholder {
+    opacity: 1;
+    font-weight: 400;
+    font-size: 13px;
+    color: gray;
+}
+
+#register-box #buttons {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#register-box #buttons #sign-up-submit {
+    width: 135px;
+    height: 45px;
+    border: none;
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    background-color: royalblue;
+    border-radius: 5px;
+} 
+
+#register-box #sign-up-submit:hover {
+    opacity: 0.85;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#register-box #buttons #register-login-button {
+    padding: 0;
+    margin: auto 0;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: royalblue;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#home #header {
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#home #header #logo {
+    height: 30px;
+    font-weight: bold;
+    margin: auto 0 auto 50px;
+    font-size: 20px;
+    border-bottom: 4px solid royalblue;      
+}
+
+#home #header #navbar {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto auto;
+}
+
+#home #header #navbar li {
+    font-size: 15px;
+    /* padding: 0 25px; */
+    font-weight: 500;
+}
+
+#home #header #navbar li:hover {
+    cursor: pointer;
+    color: #6C61E4;
+    transition: 0.5s;
+}
+
+#home #header #sign-in-button {
+    width: 150px;
+    height: 42px;
+    margin: auto 50px;
+    font-family: Google Sans;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#home #hero {
+    width: 100%;
+    height: 400px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url('images/hero_image.png');
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+}
+
+#home #hero div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#home #hero div #hero-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 50px;
+}
+
+#home #hero div #hero-text #hero-title {
+    font-size: 25px;
+    color: #A7A2A2;
+    font-weight: bold;
+}
+
+#home #hero div #hero-text #hero-title #hero-title-span {
+    color: royalblue;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#home #hero div #hero-text #hero-subtitle {
+    padding-top: 10px;
+    font-size: 20px;
+    color: #A7A2A2;
+    line-height: 27px;
+}
+
+#home #hero div #hero-text #hero-subtitle span {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#home #see-more-button {
+    width: 20px;
+    height: 20px;
+    font-size: 22px;
+    position: absolute;
+    bottom: 30px;
+    color: royalblue;
+    margin: 50px auto;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#responsive-header {
+    width: 100%;
+    height: 80px;   
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    display: none;
+}
+
+#responsive-header #menu-options {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#responsive-header #menu-bar {
+    font-size: 25px;
+    padding: 5px;
+    padding-top: 30px;
+    padding-left: 25px;
+    color: rgb(97, 96, 96);
+    display: none;
+}
+
+#responsive-header #menu-options p {
+    padding: 5px;
+    margin: 0;
+    text-align: left;
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(245, 245, 245);
+    width: 100%;
+    margin: 0px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+#responsive-header #menu-options p:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#responsive-header #right {
+    margin-right: 25px;
+}
+
+#responsive-header #right #get-updates-button {
+    padding: 0 24px;
+    margin-top: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 150px;
+    height: 42px;
+    font-family: Google Sans;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#responsive-header #right #get-updates-button:hover {
+    background-color: #184d92;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#integration {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+}
+
+#integration-title {
+    font-size: 32px;
+    color: #77797c;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#integration-content {
+    width: 45%;
+    font-size: 16px;
+    font-weight: 500;
+    height: auto;
+    margin: 0 auto;
+}
+
+#editor-view {
+    margin: 50px auto;
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#editor-view #code-editor {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    text-align: left;
+    font-family: Source Code Pro;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#editor-view #code-editor p {
+    line-height: 21px;
+    color: #222f3e;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    user-select: text;
+}
+
+.ce-keyword {
+    font-weight: 700;
+    color: #6772e4;
+    user-select: text;
+}
+
+.ce-function {
+    font-weight: 700;
+    color: #2e86de;
+    user-select: text;
+}
+
+.ce-comment {
+    font-weight: 600;
+    color: #5b5c5e;
+    user-select: text;
+}
+
+.ce-string {
+    font-weight: 500;
+    color: #6772e4;
+}
+
+.ce-key {
+    font-weight: 500;
+    color: royalblue;
+    padding-left: 30px;
+    user-select: text;
+}
+
+.ce-value {
+    font-weight: 600;
+    color: #777777;
+}
+
+.ce-param {
+    font-weight: 600;
+    font-style: oblique;
+    color: #ff9f43;
+}
+
+#editor-view #code-editor #copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    color: #6772e4;
+}
+
+#editor-view #code-editor #copy-button:hover {
+    color: #6771e46c;
+    transition: 0.5s;
+}
+
+#editor-view #output {
+    text-align: left;
+    padding-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#editor-view #code-output {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#editor-view #code-output p {
+    font-weight: 600;
+    line-height: 21px;
+    color: #222f3e;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    user-select: text;    
+    font-family: Source Code Pro;
+    overflow: scroll;
+}
+
+#editor-view #code-output p .ce-key {
+    font-weight: 500;
+    color: royalblue;
+    padding-left: 30px;
+    user-select: text;    
+}
+
+#editor-view #code-output p .ce-indent {
+    padding-left: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* @media (max-width: 1100px) {
+    #hero #left {
+        display: none;
+    }
+
+    #hero #right {
+        width: 100%;
+    }
+
+    #hero #logo-top {
+        display: block;
+    }
+
+    #hero #right #container {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    #hero #right #container #subtitle {
+        width: 80%;
+    }
+
+    #hero #right #container #signup-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #hero #right #container #sign-up-field {
+        width: 1%;
+        margin-bottom: 10px;
+        margin-right: 15px;
+    }
+
+    #hero #right #container #sign-up-button {
+        margin: 0;
+        border-radius: 5px;
+    }
+} */
+
+@media (max-width: 885px) {
+    #home #header {
+        display: none;
+    }
+
+    #responsive-header {
+        display: block;
+    }
+    
+    #responsive-header #menu {
+        display: none;
+        flex-direction: column;
+        visibility: hidden;
+        margin-left: 0;
+    }
+    
+    #responsive-header #menu p {
+        width: 100%;
+        height: 30px;
+    }
+    
+    #responsive-header #menu-bar {
+        display: block;
+    }
+
+    #hero {
+        padding-top: 75px;
+    }
+}

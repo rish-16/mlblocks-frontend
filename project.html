@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sigmoid | New Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="project.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="params.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+        <script src="assets.js"></script>
+        <script src="project.js"></script>
+    </head>
+
+    <body>
+
+        <div id="project-panel">
+            <div id="panel-top">
+                <p id="panel-header">Project Details</p>
+                <button id="panel-close-button">Close</button>
+            </div>
+            <div id="panel-body">
+                <p id="panel-project-title"></p>
+            </div>
+        </div>
+
+        <div id="new-project-modal">
+            <div id="new-project-modal-top">
+                <p id="section-title">Project Details</p>
+                <div id="top-right">
+                    <button id="save-project-button">Save</button>
+                    <button id="cancel-button">Cancel</button>
+                </div>
+            </div>
+            <div id="modal-divider"></div>
+            <div id="project-form">
+                <p id="prompt">Give your project a name</p>
+                <input type="text" placeholder="My Classifier" id="project-title">
+
+                <p id="prompt">What data are you working with?</p>
+                <div id="project-datatype-container">
+                    <div id="images" class="project-datatype-card">
+                        <img src="images/imagefile.png">
+                        <p>Images</p>
+                    </div>
+
+                    <div id="text" class="project-datatype-card">
+                        <img src="images/textfile.png">
+                        <p>Text</p>
+                    </div>
+
+                    <div id="audio" class="project-datatype-card">
+                        <img src="images/audiofile.png">
+                        <p>Audio</p>
+                    </div>
+                </div>
+
+                <p id="prompt">Let's add some training data</p>
+                <div id="training-data-container">
+
+                    <div id="add-class-button">
+                        <i class="fas fa-plus"></i>
+                        <p>Add Class</p>
+                    </div>
+
+                    <!-- 
+                        TDC
+                            TDC TOP
+                                LABEL
+                                NUM INSTANCES
+                            TDC BOTTOM
+                                FILE SELECT
+                                UPLOAD BUTTON
+                     -->
+                     <div id="training-data-container-classcards"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="header">
+            <input type="text" placeholder="Search" id="search-bar">
+            <div id="user-info">
+                <i id="notifications" class="fas fa-bell"></i>
+                <!-- <img src="images/profpic.png" alt="" id="profile-picture"> -->
+                <button id="logout-button">Log Out</button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div id="logo-box">
+                <p id="logo">sigmoid</p>
+            </div>
+        </div>
+
+        <div id="project-workbench">
+            <div id="workbench-tools">
+                <p>Projects</p>
+                <div id="tools">
+                    <div>
+                        <i id="workbench-view-grid" class="fas fa-th"></i>
+                        <i id="workbench-view-list" class="fas fa-list"></i>
+                        <button id="create-project-button">Create Project</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="workbench-cards-container"></div>
+        </div>
+
+    </body>
+</html>

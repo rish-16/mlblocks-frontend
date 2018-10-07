@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sigmoid | Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500|Roboto+Slab:100,300|Google+Sans:400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+        <script src="params.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+        <script src="app.js"></script> 
+    </head>
+
+    <body>
+
+        <div id="login-box">
+            <i class="fas fa-times" id="close-login-modal"></i>
+            <p id="logo-login">sigmoid</p>
+            <p style="font-weight: 700; font-size: 20px;" id="login-box-top-text">Sign In</p>
+            <input type="email" placeholder="Your Email" id="sign-in-email">
+            <br>
+            <input type="password" placeholder="Password" id="sign-in-pwd">
+            <br>
+            <div id="buttons">
+                <button id="sign-in-submit">Submit</button>
+                <p id="login-register-button">Sign Up instead</p>
+            </div>
+        </div>
+
+        <div id="register-box">
+            <i class="fas fa-times" id="close-register-modal"></i>
+            <p id="logo-register">sigmoid</p>
+            <p style="font-weight: 700; font-size: 20px;" id="register-box-top-text">Sign Up</p>
+            <input type="text" placeholder="Your Fullname" id="sign-up-name">
+            <br>
+            <input type="email" placeholder="Your Email" id="sign-up-email">
+            <br>
+            <input type="password" placeholder="Password" id="sign-up-pwd">
+            <br>
+            <div id="buttons">
+                <button id="sign-up-submit">Submit</button>
+                <p id="register-login-button">Login instead</p>
+            </div>
+        </div>
+
+        <!-- <div id="hero">
+            <div id="header">
+                <p id="logo-top">mlblocks</p>
+                <div id="header-right">
+                    <ul id="navbar">
+                        <li>Home</li>
+                        <li>Integration</li>
+                    </ul>
+                    <button id="sign-in-button">Sign In</button>
+                </div>
+            </div>
+
+            <div id="container">
+                <p id="title">
+                    Machine Learning,
+                    <br>
+                    <span style="font-weight: 600; font-size: 42px;">simplified.</span>
+                </p>
+
+                <p id="subtitle">
+                    Create, train, test and deploy Machine Learning models without expensive hardware.
+                </p>
+
+                <div id="signup-form">
+                    <input type="email" placeholder="Your email" id="sign-up-field">
+                    <br>
+                    <button id="sign-up-button">Get started <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <br>
+                <p id="email-message"></p>
+            </div>
+        </div> -->
+
+        <div id="home">
+            <div id="header">
+                <p id="logo">mlblocks</p>
+                <ul id="navbar">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Integration</li>
+                </ul>
+                <button id="sign-in-button">Sign In</button>
+            </div>
+
+            <div id="responsive-header">
+                <div id="responsive-display" style="width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-between;">
+                    <i class="fas fa-bars" id="menu-bar"></i>
+    
+                    <div id="right">
+                        <input type="button" value="Get updates" id="get-updates-button">
+                    </div>
+                </div>
+                    
+                <div id="menu-options">
+                    <p class="home-tab">Home</p>
+                    <p class="overview-tab">Overview</p>
+                    <p class="challenges-tab">Challenges</p>
+                    <p class="resources-tab">Resources</p>
+                </div>
+            </div>            
+
+            <div id="hero">
+                <div>
+                    <div id="hero-text">
+                        <p id="hero-title">
+                            Machine Learning.
+                            <br>
+                            <span id="hero-title-span"></span>
+                        </p>
+                        <p id="hero-subtitle">
+                            Create train, test and deploy Machine Learning models.
+                            <br>
+                            Without expensive hardware.
+                            <br>
+                        </p>
+                    </div>
+                    <!-- <img id="hero-image" src="images/science.png"> -->
+                </div>
+            </div>
+
+            <i id="see-more-button" class="fas fa-chevron-down"></i>
+        </div>        
+
+        <div id="integration">
+            <p id="integration-title">Integration</p>
+            <p id="integration-content">
+                Upload your data. Train the algorithm. Deploy!
+            </p>
+            <div class="section-desc" id="integration-desc">
+                <div id="editor-view">
+                    <div id="code-editor">
+                        <p>
+                            <span class="ce-comment"># !pip install requests</span>
+                            <br>
+                            <span class="ce-keyword">import</span> requests
+                            <br>
+                            <br>
+                            <span class="ce-comment"># Testing instances</span>
+                            <br>
+                            text = <span class="ce-string">'One of the greatest and most underrated composers of all time, Ennio Morricone will be best remembered for his late 60's/early 70's work on Spaggetti Westerns'</span>
+                            <br>
+                            <br>
+                            <span class="ce-comment"># Instantiate model</span>
+                            <br>
+                            url = <span class="ce-string">'api.mlblocks.com/'</span>
+                            <br>
+                            options = {
+                                <br>
+                                <span class="ce-key">api_reference: <span class="ce-value">'API_ACCESS_TOKEN'</span></span>,
+                                <br>
+                                <span class="ce-key">data: <span class="ce-value">text</span></span>
+                                <br>
+                            }
+                            <br>
+                            <br>
+                            <span class="ce-comment"># Get predictions response from trained model</span>
+                            <br>
+                            predictions = request.<span class="ce-function">get</span>(url, <span class="ce-param">data=</span>options)
+                        </p>
+                        <i title="Copy" id="copy-button" class="far fa-copy"></i>
+                    </div>
+                    
+                    <p id="output">JSON Output:</p>
+                    <div id="code-output">
+                        <p>
+                            {
+                                <br>
+                                <span class="ce-key">sentiment_score:</span> <span class="ce-value">0.89</span>,
+                                <br>
+                                <span class="ce-key">metadata: </span> {
+                                    <br>
+                                    <span class="ce-indent"></span><span class="ce-key">string:</span> <span class="ce-value">'One of the greatest and most underrated composers of all time, Ennio Morricone will be best remembered for his late 60's/early 70's work on Spaggetti Westerns'</span>,
+                                    <br>
+                                    <span class="ce-indent"></span><span class="ce-key">language:</span> <span class="ce-value">'en'</span>,
+                                    <br>
+                                    <span class="ce-indent"></span><span class="ce-key">num_words:</span> <span class="ce-value">23</span>,
+                                    <br>
+                                <span class="ce-indent"></span>}
+                                <br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <!-- <iframe  style="margin: 0 auto;" height="400px" width="75%" src="https://repl.it/@rish_16/ElderlyFlimsyQuadrant?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> -->
+            </div>
+        </div>
+        
+    </body>
+</html>
