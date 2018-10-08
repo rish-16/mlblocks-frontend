@@ -46,7 +46,7 @@ a {
 }
 
 #login-box #logo-login {
-    width: 95px;
+    width: 105px;
     margin: 50px auto;
     font-size: 25px;
     font-weight: 700;
@@ -90,7 +90,7 @@ a {
     font-size: 15px;
     font-weight: 600;
     color: rgb(77, 77, 77);
-    font-family: Raleway;
+    font-family: Google Sans;
     background-color: none;
 }
 
@@ -114,7 +114,7 @@ a {
     width: 135px;
     height: 45px;
     border: none;
-    font-family: Raleway;
+    font-family: Google Sans;
     font-weight: 600;
     font-size: 16px;
     color: white;
@@ -158,15 +158,15 @@ a {
 }
 
 #register-box #logo-register {
-    width: 95px;
+    width: 105px;
     margin: 50px auto;
     font-size: 25px;
     font-weight: 700;
-    line-height: 35px;
+    line-height: 13px;
     border-bottom: 5px solid royalblue;
 }
 
-#loregistergin-box p {
+#register-box p {
     font-size: 22px;
     font-weight: 700;
     padding-bottom: 12px;
@@ -198,7 +198,7 @@ a {
     font-size: 15px;
     font-weight: 600;
     color: rgb(77, 77, 77);
-    font-family: Raleway;
+    font-family: Google Sans;
     background-color: none;
 }
 
@@ -222,7 +222,7 @@ a {
     width: 135px;
     height: 45px;
     border: none;
-    font-family: Raleway;
+    font-family: Google Sans;
     font-weight: 600;
     font-size: 16px;
     color: white;
@@ -276,7 +276,7 @@ a {
 
 #home #header #navbar li {
     font-size: 15px;
-    /* padding: 0 25px; */
+    padding: 0 25px;
     font-weight: 500;
 }
 
@@ -346,7 +346,7 @@ a {
 
 #home #hero div #hero-text #hero-subtitle {
     padding-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
     color: #A7A2A2;
     line-height: 27px;
 }
@@ -380,6 +380,7 @@ a {
     position: fixed;
     z-index: 1000;
     display: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #responsive-header #menu-options {
@@ -469,7 +470,7 @@ a {
 }
 
 #integration-content {
-    width: 45%;
+    width: 50%;
     font-size: 16px;
     font-weight: 500;
     height: auto;
@@ -492,8 +493,8 @@ a {
     height: auto;
     background-color: #fff;
     text-align: left;
-    font-family: Source Code Pro;
-    font-size: 14px;
+    font-family: Google Sans;
+    font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -502,7 +503,7 @@ a {
 #editor-view #code-editor p {
     line-height: 21px;
     color: #222f3e;
-    font-size: 14px;
+    font-size: 16px;
     padding-left: 10px;
     padding-bottom: 15px;
     padding-top: 10px;
@@ -511,7 +512,13 @@ a {
 
 .ce-keyword {
     font-weight: 700;
-    color: #6772e4;
+    color: royalblue;
+    user-select: text;
+}
+
+.ce-var {
+    font-weight: 500;
+    color: royalblue;
     user-select: text;
 }
 
@@ -522,25 +529,24 @@ a {
 }
 
 .ce-comment {
-    font-weight: 600;
+    /* font-weight: 500; */
     color: #5b5c5e;
     user-select: text;
 }
 
 .ce-string {
     font-weight: 500;
-    color: #6772e4;
+    color: #5b5c5e;
 }
 
-.ce-key {
-    font-weight: 500;
+.ce-key {    
     color: royalblue;
     padding-left: 30px;
     user-select: text;
 }
 
 .ce-value {
-    font-weight: 600;
+    font-weight: 500;
     color: #777777;
 }
 
@@ -556,6 +562,7 @@ a {
     right: 10px;
     font-size: 25px;
     color: #6772e4;
+    cursor: pointer;
 }
 
 #editor-view #code-editor #copy-button:hover {
@@ -574,14 +581,14 @@ a {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #f1f1f1;
+    background-color: #fafafa;
     margin: 10px 0;
     border-radius: 10px;
     text-align: left;
 }
 
 #editor-view #code-output p {
-    font-weight: 600;
+    /* font-weight: 600; */
     line-height: 21px;
     color: #222f3e;
     font-size: 14px;
@@ -589,12 +596,12 @@ a {
     padding-bottom: 15px;
     padding-top: 10px;
     user-select: text;    
-    font-family: Source Code Pro;
+    font-family: Google Sans;
     overflow: scroll;
 }
 
 #editor-view #code-output p .ce-key {
-    font-weight: 500;
+    font-weight: 600;
     color: royalblue;
     padding-left: 30px;
     user-select: text;    
@@ -606,48 +613,64 @@ a {
 
 /* -------------------------------------------------------------------------------------------------------------- */
 
-/* @media (max-width: 1100px) {
-    #hero #left {
-        display: none;
-    }
+.message-card {
+    position: fixed;
+    left: 40px;
+    bottom: 20px;
+    width: auto;
+    height: 50px;
+    z-index: 5000;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-    #hero #right {
-        width: 100%;
-    }
+.message-card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: royalblue;
+    padding: 0 20px;
+    margin: auto 0;
+}
 
-    #hero #logo-top {
-        display: block;
-    }
+.message-card p i {
+    font-size: 15px;
+    padding: 0 7px 0 0;
+}
 
-    #hero #right #container {
-        width: 90%;
-        margin-top: 30px;
-    }
+.message-card.show {
+    visibility: visible;
+   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
-    #hero #right #container #subtitle {
-        width: 80%;
-    }
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
 
-    #hero #right #container #signup-form {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
 
-    #hero #right #container #sign-up-field {
-        width: 1%;
-        margin-bottom: 10px;
-        margin-right: 15px;
-    }
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
 
-    #hero #right #container #sign-up-button {
-        margin: 0;
-        border-radius: 5px;
-    }
-} */
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
 
-@media (max-width: 885px) {
+/* -------------------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 835px) {
     #home #header {
         display: none;
     }
@@ -674,5 +697,9 @@ a {
 
     #hero {
         padding-top: 75px;
+    }
+
+    #integration-content {
+        width: 70%;
     }
 }

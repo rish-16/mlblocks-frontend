@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var DBref = firebase.database().ref()
     
     const signInButton = document.getElementById('sign-in-button')
-    // const signUpButton = document.getElementById('sign-up-button')
 
     const loginModal = document.getElementById('login-box')
     const registerModal = document.getElementById('register-box')
@@ -37,13 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroTitleSpan = document.getElementById('hero-title-span')
 
-    // const heroEmail = document.getElementById('sign-up-field')
-    // const emailMessage = document.getElementById('email-message')
+    const copyButton = document.getElementById('copy-button')
 
     signInButton.onclick = () => {
         loginModal.style.display = 'block'
-        left.style.opacity = 0.2
-        right.style.opacity = 0.2
     }
 
     loginRegisterButton.onclick = () => {
@@ -55,23 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loginModal.style.display = 'block'
         registerModal.style.display = 'none'
     }
-
-    // signUpButton.onclick = () => {
-    //     if (validateEmail(heroEmail.value)) {
-    //         var randomID = makeID()
-    //         DBref.child('Sign Ups').child(randomID).set(heroEmail.value)
-    //         registerModalEmail.value = heroEmail.value
-    //         registerModalName.value = ''
-    //         registerModalPwd.value = ''
-    //         heroEmail.value = ''
-    //         registerModal.style.display = 'block'
-
-    //         left.style.opacity = 0.2
-    //         right.style.opacity = 0.2
-    //     } else {
-    //         emailMessage.innerText = "Oops! That doesn't look like an email..."
-    //     }
-    // }
 
     registerModalSubmit.onclick = () => {
         var promise = firebase.auth().createUserWithEmailAndPassword(registerModalEmail.value, registerModalPwd.value)
@@ -104,14 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginModalClose.onclick = () => {
         loginModal.style.display = 'none'
-        left.style.opacity = 1
-        right.style.opacity = 1
     }
 
     registerModalClose.onclick = () => {
         registerModal.style.display = 'none'
-        left.style.opacity = 1
-        right.style.opacity = 1
     }
 
     function validateEmail(email) {
@@ -131,9 +106,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var typewriter = new Typewriter(heroTitleSpan, {
 		loop: false,
-        typingSpeed: 75
+        typingSpeed: 60
 	})
 
-	typewriter.typeString('Simplified.').start()
-
+    typewriter.typeString('Simplified.').start()
+    
+    copyButton.onclick = () => {
+        const el = document.createElement('textarea')
+        el.value = "# !pip install pillow\n# !pip install numpy\nimport requests\nfrom PIL import Image\nimport numpy as np\n\n# Testing instance\nimage = Image.open(fp='image.jpg')\n\n# Instantiate model\nurl = 'mlblocks.com/predict/'\noptions = {\n\tapi_reference: 'API_ACCESS_TOKEN'\n\tdata: image\n}\n# Get predictions response from trained model\npredictions = request.get(url,data=options)\n"
+        document.body.appendChild(el)
+        el.select()
+        document.execCommand('copy')
+        document.body.removeChild(el)
+        var msg = new MessageCard('Copied to clipboard!')
+        msg.addMessage()
+    }
 })

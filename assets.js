@@ -316,7 +316,7 @@ Project.prototype.handleUpload = function() {
     const STref = firebase.storage().ref()
 
     var http = new XMLHttpRequest()
-    var url = 'http://54.169.162.57:5000/' + this.projectID + '/train'
+    var url = 'http://13.229.84.83:5000/' + this.projectID + '/train'
 
     http.open('POST', url, true)
 

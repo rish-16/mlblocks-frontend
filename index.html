@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sigmoid | Home</title>
+        <title>mlblocks | Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -27,10 +27,12 @@
         <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500|Roboto+Slab:100,300|Google+Sans:400,500" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+
         <script src="params.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+        <script src="assets.js"></script>
         <script src="app.js"></script> 
     </head>
 
@@ -38,7 +40,7 @@
 
         <div id="login-box">
             <i class="fas fa-times" id="close-login-modal"></i>
-            <p id="logo-login">sigmoid</p>
+            <p id="logo-login">mlblocks</p>
             <p style="font-weight: 700; font-size: 20px;" id="login-box-top-text">Sign In</p>
             <input type="email" placeholder="Your Email" id="sign-in-email">
             <br>
@@ -52,7 +54,7 @@
 
         <div id="register-box">
             <i class="fas fa-times" id="close-register-modal"></i>
-            <p id="logo-register">sigmoid</p>
+            <p id="logo-register">mlblocks</p>
             <p style="font-weight: 700; font-size: 20px;" id="register-box-top-text">Sign Up</p>
             <input type="text" placeholder="Your Fullname" id="sign-up-name">
             <br>
@@ -65,39 +67,6 @@
                 <p id="register-login-button">Login instead</p>
             </div>
         </div>
-
-        <!-- <div id="hero">
-            <div id="header">
-                <p id="logo-top">mlblocks</p>
-                <div id="header-right">
-                    <ul id="navbar">
-                        <li>Home</li>
-                        <li>Integration</li>
-                    </ul>
-                    <button id="sign-in-button">Sign In</button>
-                </div>
-            </div>
-
-            <div id="container">
-                <p id="title">
-                    Machine Learning,
-                    <br>
-                    <span style="font-weight: 600; font-size: 42px;">simplified.</span>
-                </p>
-
-                <p id="subtitle">
-                    Create, train, test and deploy Machine Learning models without expensive hardware.
-                </p>
-
-                <div id="signup-form">
-                    <input type="email" placeholder="Your email" id="sign-up-field">
-                    <br>
-                    <button id="sign-up-button">Get started <i class="fas fa-arrow-right"></i></button>
-                </div>
-                <br>
-                <p id="email-message"></p>
-            </div>
-        </div> -->
 
         <div id="home">
             <div id="header">
@@ -115,7 +84,7 @@
                     <i class="fas fa-bars" id="menu-bar"></i>
     
                     <div id="right">
-                        <input type="button" value="Get updates" id="get-updates-button">
+                        <input type="button" value="Sign In" id="get-updates-button">
                     </div>
                 </div>
                     
@@ -136,47 +105,56 @@
                             <span id="hero-title-span"></span>
                         </p>
                         <p id="hero-subtitle">
-                            Create train, test and deploy Machine Learning models.
+                            Create, train and deploy Machine Learning models.
                             <br>
                             Without expensive hardware.
                             <br>
                         </p>
                     </div>
-                    <!-- <img id="hero-image" src="images/science.png"> -->
                 </div>
             </div>
 
             <i id="see-more-button" class="fas fa-chevron-down"></i>
         </div>        
 
+        <div id="about">
+
+        </div>
+
         <div id="integration">
             <p id="integration-title">Integration</p>
             <p id="integration-content">
-                Upload your data. Train the algorithm. Deploy!
+                Deploying your model shouldn't be difficult. Use a simple REST URL instead!
             </p>
             <div class="section-desc" id="integration-desc">
                 <div id="editor-view">
                     <div id="code-editor">
                         <p>
-                            <span class="ce-comment"># !pip install requests</span>
+                            <span class="ce-comment"># !pip install pillow</span>
+                            <br>
+                            <span class="ce-comment"># !pip install numpy</span>
                             <br>
                             <span class="ce-keyword">import</span> requests
+                            <br>
+                            <span class="ce-keyword">from</span> PIL <span class="ce-keyword">import</span> Image
+                            <br>
+                            <span class="ce-keyword">import</span> numpy <span class="ce-keyword">as</span> np
                             <br>
                             <br>
                             <span class="ce-comment"># Testing instances</span>
                             <br>
-                            text = <span class="ce-string">'One of the greatest and most underrated composers of all time, Ennio Morricone will be best remembered for his late 60's/early 70's work on Spaggetti Westerns'</span>
+                            <span class="ce-var">image</span> = Image.<span class="ce-function">open</span>(<span class="ce-param">file=</span><span class="ce-string">'image.jpg'</span> )
                             <br>
                             <br>
                             <span class="ce-comment"># Instantiate model</span>
                             <br>
-                            url = <span class="ce-string">'api.mlblocks.com/'</span>
+                            <span class="ce-var">url</span> = <span class="ce-string">'mlblocks.com/predict/'</span>
                             <br>
                             options = {
                                 <br>
                                 <span class="ce-key">api_reference: <span class="ce-value">'API_ACCESS_TOKEN'</span></span>,
                                 <br>
-                                <span class="ce-key">data: <span class="ce-value">text</span></span>
+                                <span class="ce-key">data: <span class="ce-value">image</span></span>
                                 <br>
                             }
                             <br>
@@ -193,23 +171,14 @@
                         <p>
                             {
                                 <br>
-                                <span class="ce-key">sentiment_score:</span> <span class="ce-value">0.89</span>,
+                                <span class="ce-key">class_label:</span> <span class="ce-value">'dog'</span>,
                                 <br>
-                                <span class="ce-key">metadata: </span> {
-                                    <br>
-                                    <span class="ce-indent"></span><span class="ce-key">string:</span> <span class="ce-value">'One of the greatest and most underrated composers of all time, Ennio Morricone will be best remembered for his late 60's/early 70's work on Spaggetti Westerns'</span>,
-                                    <br>
-                                    <span class="ce-indent"></span><span class="ce-key">language:</span> <span class="ce-value">'en'</span>,
-                                    <br>
-                                    <span class="ce-indent"></span><span class="ce-key">num_words:</span> <span class="ce-value">23</span>,
-                                    <br>
-                                <span class="ce-indent"></span>}
+                                <span class="ce-key">confidence:</span> <span class="ce-value">0.985</span>,
                                 <br>
                             }
                         </p>
                     </div>
                 </div>
-                <!-- <iframe  style="margin: 0 auto;" height="400px" width="75%" src="https://repl.it/@rish_16/ElderlyFlimsyQuadrant?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe> -->
             </div>
         </div>
         

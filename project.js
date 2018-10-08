@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var status = 'Inactive'
             var trained = false
             var type = 'Classification'
-            var url = 'www.sigmoid.com/' + ID
+            var url = 'www.mlblocks.com/' + ID
             var title = newProjectTitle.value
             var dataUsed = DATATYPES[dataBlockChosen]
     
