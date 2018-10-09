@@ -167,6 +167,27 @@ ModelCard.prototype.handleDeletion = function(workspace) {
         task = window.confirm('Are you sure you want to delete the project? This cannot be undone.')
     }
     if (task) {
+
+        var http = new XMLHttpRequest()
+        var url = 'http://3.0.2.90:5000/' + this.pID + '/delete'
+
+        http.open('POST', url, true)
+
+        // Send the proper header information along with the request
+        //http.setRequestHeader('Content-type', 'multipart/form-data')
+        var formData = new FormData();
+        formData.append("userID", this.uID);
+
+        http.onreadystatechange = function() {
+            // Call a function when the state changes
+            if (http.readyState == 4 && http.status == 200) {
+                window.alert(http.responseText)
+            }
+        }
+
+        http.send(formData)
+
+
         // Delete from Database
         const ref = firebase.database().ref()
         ref.child('Projects').child(this.uID).child(this.pID).remove()
@@ -183,6 +204,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
                 })
             }
         }
+
         
         workspace.removeChild(this.card)
         var msg = new MessageCard('Project successfully deleted!')
@@ -316,13 +338,15 @@ Project.prototype.handleUpload = function() {
     const STref = firebase.storage().ref()
 
     var http = new XMLHttpRequest()
-    var url = 'http://13.229.84.83:5000/' + this.projectID + '/train'
+    var url = 'http://3.0.2.90:5000/' + this.projectID + '/train'
 
     http.open('POST', url, true)
 
     // Send the proper header information along with the request
-    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-    var params = 'user=' + this.projectUser
+    //http.setRequestHeader('Content-type', 'multipart/form-data')
+    var formData = new FormData();
+    formData.append("userID", this.projectUser);
+
     http.onreadystatechange = function() {
         // Call a function when the state changes
         if (http.readyState == 4 && http.status == 200) {
@@ -330,7 +354,7 @@ Project.prototype.handleUpload = function() {
         }
     }
 
-    http.send(params)
+    http.send(formData)
 
     projectData = {
         'ID': this.projectID,
