@@ -416,3 +416,147 @@ MessageCard.prototype.addMessage = function() {
         document.body.removeChild(card)
     }, 2500)
 }
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+function DeploymentCard(DOC, userID, pID, title, type, url, status, trainingStatus, numClasses, pClasses, distribution) {
+    this.DOC = DOC
+    this.uID = userID
+    this.pID = pID
+    this.title = title
+    this.type = type
+    this.purl = url
+    this.status = status
+    this.tStatus = trainingStatus
+    this.numClasses = numClasses
+    this.pClasses = pClasses
+    this.distribution = distribution
+}
+
+DeploymentCard.prototype.addModel = function(container) {
+    this.card = document.createElement('div')
+    this.card.classList += 'project-card'
+
+    var cardTop = document.createElement('div')
+    cardTop.classList += 'project-card-top'
+
+    var dateNode = document.createElement('p')
+    dateNode.innerHTML = this.DOC
+    dateNode.classList += 'project-creation-date'
+
+    var options = document.createElement('div')
+    options.classList += 'project-top-options'
+
+    this.optionsNodeTS = document.createElement('i')
+    this.optionsNodeTS.classList += 'project-options-toggle-status'
+    if (this.status == 'Inactive') {
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+    } else if (this.status == 'Active') {
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+    }
+
+    this.optionsNodeDel = document.createElement('i')
+    this.optionsNodeDel.innerHTML = '<i class="fas fa-trash-alt"></i>'
+    this.optionsNodeDel.classList += 'project-options-delete'
+
+    options.appendChild(this.optionsNodeTS)
+    options.appendChild(this.optionsNodeDel)
+
+    this.optionsNodeTS.onclick = () => {
+        this.handleDeployment()
+    }
+
+    var cardDisplay = document.createElement('div')
+    cardDisplay.classList = 'model-display'
+
+    var cardDisplayP = document.createElement('p')
+    var matches = this.title[0].toUpperCase()
+    cardDisplayP.innerText = matches
+
+    var cardTitle = document.createElement('p')
+    cardTitle.classList += 'model-title'
+    cardTitle.innerText = this.title
+
+    var cardClasses = document.createElement('p')
+    cardClasses.classList += 'model-classes'
+    cardClasses.innerText = 'Classes: '
+
+    var cardClassesSpan = document.createElement('span')
+    cardClassesSpan.innerText = this.numClasses
+    cardClasses.appendChild(cardClassesSpan)
+
+    var statusNode = document.createElement('div')
+    statusNode.classList = 'model-status-node'
+
+    this.cardTrainingStatus = document.createElement('p')
+    this.cardTrainingStatus.classList = 'model-training-status'
+    if (this.tStatus) {
+        this.cardTrainingStatus.innerHTML = 'Trained'
+    } else if (this.tStatus == false) {
+        this.cardTrainingStatus.innerHTML = 'Untrained'
+    }
+
+    this.cardStatus = document.createElement('p')
+    this.cardStatus.classList += 'model-status'
+    this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+    if (this.status == 'Inactive') {
+        this.cardStatus.style.color = '#ee5253'
+    } else if (this.status == 'Active') {
+        this.cardStatus.style.color = '#10ac84'
+    }
+
+    statusNode.appendChild(this.cardTrainingStatus)
+    statusNode.appendChild(this.cardStatus)
+
+    var cardDivider = document.createElement('div')
+    cardDivider.classList += 'model-divider'
+
+    var cardType = document.createElement('p')
+    cardType.innerHTML = this.purl + ' <i class="far fa-copy"></i>'
+    cardType.classList = 'model-type'
+
+    cardType.onclick = () => {
+        const el = document.createElement('textarea');
+        el.value = this.purl;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        var msg = new MessageCard('Copied to clipboard!')
+        msg.addMessage()
+    }
+
+    cardTop.appendChild(dateNode)
+    cardTop.appendChild(options)
+    this.card.appendChild(cardTop)
+
+    cardDisplay.appendChild(cardDisplayP)
+    this.card.appendChild(cardDisplay)
+
+    this.card.appendChild(cardTitle)
+    this.card.appendChild(cardClasses)
+    this.card.appendChild(statusNode)
+
+    this.card.appendChild(cardDivider)
+    this.card.appendChild(cardType)
+
+    container.prepend(this.card)
+}
+
+DeploymentCard.prototype.handleDeployment = function() {
+    if (this.status == 'Inactive') {
+        this.status = 'Active'
+        this.cardStatus.style.color = '#10ac84'
+        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+    } else if (this.status == 'Active') {
+        this.status = 'Inactive'
+        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+        this.cardStatus.style.color = '#ee5253'
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+    }
+}
+
+DeploymentCard.prototype.performAnimation = function() {
+    
+}

@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const copyButton = document.getElementById('copy-button')
 
+    const deploymentSection = document.getElementById('deployment-section')
+
+    var deploymentCard = new DeploymentCard('21 Sept 18', 'XXXXXXXX', 'XXXXXXXX', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, '2', ['XXX', 'xxx'], [130, 162])
+    deploymentCard.addModel(deploymentSection)
+
     signInButton.onclick = () => {
         loginModal.style.display = 'block'
     }
@@ -120,5 +125,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(el)
         var msg = new MessageCard('Copied to clipboard!')
         msg.addMessage()
-    }
+    }    
 })
