@@ -36,12 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroTitleSpan = document.getElementById('hero-title-span')
 
-    const copyButton = document.getElementById('copy-button')
-
+    const trainingSection = document.getElementById('training-section')
+    const dataCollectionSection = document.getElementById('data-collection-section')
     const deploymentSection = document.getElementById('deployment-section')
 
-    var deploymentCard = new DeploymentCard('21 Sept 18', 'XXXXXXXX', 'XXXXXXXX', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, '2', ['XXX', 'xxx'], [130, 162])
+    var dataCollectionCard = new ClassDisplay()
+    dataCollectionCard.displayClassCard(dataCollectionSection)
+    dataCollectionCard.typeClassLabel()
+
+    var trainingCard = new DeploymentCard('21 Sept 18', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, 2)
+    trainingCard.addModel(trainingSection)
+    trainingCard.trainingInit()
+
+    var deploymentCard = new DeploymentCard('21 Sept 18', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, 2)
     deploymentCard.addModel(deploymentSection)
+    deploymentCard.handleDeployment()
 
     signInButton.onclick = () => {
         loginModal.style.display = 'block'
@@ -111,19 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var typewriter = new Typewriter(heroTitleSpan, {
 		loop: false,
-        typingSpeed: 60
+        typingSpeed: 100
 	})
 
     typewriter.typeString('Simplified.').start()
-    
-    copyButton.onclick = () => {
-        const el = document.createElement('textarea')
-        el.value = "# !pip install pillow\n# !pip install numpy\nimport requests\nfrom PIL import Image\nimport numpy as np\n\n# Testing instance\nimage = Image.open(fp='image.jpg')\n\n# Instantiate model\nurl = 'mlblocks.com/predict/'\noptions = {\n\tapi_reference: 'API_ACCESS_TOKEN'\n\tdata: image\n}\n# Get predictions response from trained model\npredictions = request.get(url,data=options)\n"
-        document.body.appendChild(el)
-        el.select()
-        document.execCommand('copy')
-        document.body.removeChild(el)
-        var msg = new MessageCard('Copied to clipboard!')
-        msg.addMessage()
-    }    
 })

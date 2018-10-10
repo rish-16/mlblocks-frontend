@@ -419,18 +419,14 @@ MessageCard.prototype.addMessage = function() {
 
 // ------------------------------------------------------------------------------------------------------------------------
 
-function DeploymentCard(DOC, userID, pID, title, type, url, status, trainingStatus, numClasses, pClasses, distribution) {
-    this.DOC = DOC
-    this.uID = userID
-    this.pID = pID
+function DeploymentCard(DOC, title, type, url, status, trainingStatus, numClasses) {
+    this.DOC = DOC 
     this.title = title
     this.type = type
     this.purl = url
     this.status = status
     this.tStatus = trainingStatus
     this.numClasses = numClasses
-    this.pClasses = pClasses
-    this.distribution = distribution
 }
 
 DeploymentCard.prototype.addModel = function(container) {
@@ -462,10 +458,6 @@ DeploymentCard.prototype.addModel = function(container) {
     options.appendChild(this.optionsNodeTS)
     options.appendChild(this.optionsNodeDel)
 
-    this.optionsNodeTS.onclick = () => {
-        this.handleDeployment()
-    }
-
     var cardDisplay = document.createElement('div')
     cardDisplay.classList = 'model-display'
 
@@ -490,11 +482,7 @@ DeploymentCard.prototype.addModel = function(container) {
 
     this.cardTrainingStatus = document.createElement('p')
     this.cardTrainingStatus.classList = 'model-training-status'
-    if (this.tStatus) {
-        this.cardTrainingStatus.innerHTML = 'Trained'
-    } else if (this.tStatus == false) {
-        this.cardTrainingStatus.innerHTML = 'Untrained'
-    }
+    this.cardTrainingStatus.innerHTML = 'Trained'
 
     this.cardStatus = document.createElement('p')
     this.cardStatus.classList += 'model-status'
@@ -511,19 +499,17 @@ DeploymentCard.prototype.addModel = function(container) {
     var cardDivider = document.createElement('div')
     cardDivider.classList += 'model-divider'
 
-    var cardType = document.createElement('p')
-    cardType.innerHTML = this.purl + ' <i class="far fa-copy"></i>'
-    cardType.classList = 'model-type'
+    this.cardType = document.createElement('p')
+    this.cardType.innerHTML = this.purl + ' <i class="far fa-copy"></i>'
+    this.cardType.classList = 'model-type'
 
-    cardType.onclick = () => {
+    this.cardType.onclick = () => {
         const el = document.createElement('textarea');
         el.value = this.purl;
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-        var msg = new MessageCard('Copied to clipboard!')
-        msg.addMessage()
     }
 
     cardTop.appendChild(dateNode)
@@ -538,25 +524,74 @@ DeploymentCard.prototype.addModel = function(container) {
     this.card.appendChild(statusNode)
 
     this.card.appendChild(cardDivider)
-    this.card.appendChild(cardType)
+    this.card.appendChild(this.cardType)
 
     container.prepend(this.card)
 }
 
-DeploymentCard.prototype.handleDeployment = function() {
-    if (this.status == 'Inactive') {
-        this.status = 'Active'
-        this.cardStatus.style.color = '#10ac84'
-        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
-        this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
-    } else if (this.status == 'Active') {
-        this.status = 'Inactive'
-        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
-        this.cardStatus.style.color = '#ee5253'
-        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
-    }
+DeploymentCard.prototype.trainingInit = function() {    
+    this.cardTrainingStatus.innerHTML = 'Training'
 }
 
-DeploymentCard.prototype.performAnimation = function() {
+DeploymentCard.prototype.handleDeployment = function() {
+    this.cardStatus.style.color = '#10ac84'
+    this.cardStatus.innerHTML = 'Active <i class="fas fa-circle"></i>'
+    this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+    this.cardType.style.color = 'royalblue'
+}
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+function ClassDisplay() {}
+
+ClassDisplay.prototype.displayClassCard = function(workspace) {
+    var card = document.createElement('div')
+    card.classList += 'training-data-card'
     
+    var cardTop = document.createElement('div')
+    cardTop.classList += 'tdc-top'
+
+    var cardBottom = document.createElement('div')
+    cardBottom.classList += 'tdc-bottom'
+
+    this.classLabel = document.createElement('p')
+    // this.classLabel.type = 'text'
+    // this.classLabel.placeholder = 'Class label'
+    this.classLabel.classList += 'class-label'
+
+    this.numInstancesNode = document.createElement('p')
+    this.numInstancesNode.classList += 'class-instances'
+
+    var uploadButton = document.createElement('button')
+    uploadButton.innerHTML = 'Upload <i class="fas fa-upload"></i>'
+    uploadButton.classList += 'upload-button'
+
+    this.deleteButton = document.createElement('button')
+    this.deleteButton.innerHTML = '<i class="fas fa-times"></i>'
+    this.deleteButton.classList += 'delete-button'
+    
+    cardTop.appendChild(this.classLabel)
+    cardTop.appendChild(this.numInstancesNode)
+
+    cardBottom.appendChild(uploadButton)
+    cardBottom.appendChild(this.deleteButton)
+
+    card.appendChild(cardTop)
+    card.appendChild(cardBottom)
+
+    workspace.appendChild(card)
+}
+
+ClassDisplay.prototype.typeClassLabel = function() {
+    var typewriter = new Typewriter(this.classLabel, {
+		loop: true,
+        typingSpeed: 100
+	})
+
+    typewriter.typeString('Dog')
+        .pauseFor(200)
+        .deleteAll()
+        .start()
+
+    this.numInstancesNode.innerHTML = '50 Instances'
 }

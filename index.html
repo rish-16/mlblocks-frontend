@@ -81,7 +81,10 @@
 
             <div id="responsive-header">
                 <div id="responsive-display" style="width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-between;">
-                    <i class="fas fa-bars" id="menu-bar"></i>
+                    <div style="display: flex; flex-direction: row;">
+                        <i class="fas fa-bars" id="menu-bar"></i>
+                        <p id="logo">mlblocks</p>
+                    </div>
     
                     <div id="right">
                         <input type="button" value="Sign In" id="get-updates-button">
@@ -122,24 +125,77 @@
             <p id="about-content">
                 The what's and how's. All in one place.
             </p>
-            <div class="about-section">
+
+            <div class="about-section" id="data-collection">
                 <div class="about-section-left">
                     <p class="about-section-title">
-                        Create, train, deploy.
+                        1. Create models on the fly.
                     </p>
                     <p class="about-section-content">
-                        Create models on the go by simply providing the data.
-                        Train them in the cloud and serve them to users
+                        Simply upload your data and with a click of a button, begin the training process. 
+                        Limited training data? Don't worry. We've got you covered!
                     </p>
                 </div>
 
-                <div class="about-section-right" id="deployment-section" style="zoom: 0.9;">
+                <div class="about-section-right" id="data-collection-section" style="zoom: 1.2;">
+                    
+                </div>
+            </div>
+
+            <div id="about-arrow"></div>
+
+            <div class="about-section" id="training-model">
+                <div class="about-section-left">
+                    <p class="about-section-title">
+                        2. Training - Simplified.
+                    </p>
+                    <p class="about-section-content">
+                        Create models on the go by simply providing the data.
+                        Train your models on the cloud on high performance machinery.
+                    </p>
+                </div>
+
+                <div class="about-section-right" id="training-section">
+                    
+                </div>
+            </div>
+
+            <div id="about-arrow"></div>
+
+            <div class="about-section" id="model-deployment">
+                <div class="about-section-left">
+                    <p class="about-section-title">
+                        3. Deployment one click away.
+                    </p>
+                    <p class="about-section-content">
+                        Deploy and serve your models from the cloud without touching a single line of code!
+                    </p>
+                </div>
+
+                <div class="about-section-right" id="deployment-section">
+                    
+                </div>
+            </div>
+
+            <div id="about-arrow"></div>
+
+            <div class="about-section" id="model-integration">
+                <div class="about-section-left">
+                    <p class="about-section-title">
+                        4. Deployment one click away.
+                    </p>
+                    <p class="about-section-content">
+                        Easily integrate your trained models using a REST URL for instantaneous predictions!
+                    </p>
+                </div>
+
+                <div class="about-section-right" id="integration-section">
                     
                 </div>
             </div>
         </div>
 
-        <div id="integration">
+        <!-- <div id="integration">
             <p id="integration-title">Integration</p>
             <p id="integration-content">
                 Deploying your model shouldn't be difficult. Use a simple REST URL instead!
@@ -198,7 +254,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         
     </body>
 </html>
