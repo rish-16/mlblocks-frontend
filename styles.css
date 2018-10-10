@@ -276,7 +276,7 @@ a {
     width: 300px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style: none;
     margin: auto auto;
 }
@@ -524,7 +524,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px;
+    margin: 10px 25px;
 }
 
 .about-section .about-section-left .about-section-title {
@@ -547,7 +547,7 @@ a {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     text-align: center;
-    margin: 20px auto;
+    /* margin: 20px auto; */
 }
 
 .project-card .project-card-top {
@@ -580,21 +580,11 @@ a {
     margin: auto 0;
 }
 
-.project-card .project-card-top .project-options-toggle-status:hover {
-    color: royalblue;
-    transition: 0.5s;
-}
-
 .project-card .project-card-top .project-options-delete {
     font-size: 15px;
     color: rgba(109, 102, 102, 0.5);
     padding: 0 10px;
     margin: auto 0;
-}
-
-.project-card .project-card-top .project-options-delete:hover {
-    color: royalblue;
-    transition: 0.5s;
 }
 
 .project-card .model-display {
@@ -687,12 +677,6 @@ a {
     font-size: 14px;
 }
 
-.project-card .model-type:hover {
-    color: royalblue;
-    /* font-weight: bold; */
-    transition: 0.5s;
-}
-
 .project-card .model-divider {
     width: 110px;
     height: 1px;
@@ -727,7 +711,7 @@ a {
     height: 35px;
     background: none;
     border-bottom: 1px solid rgba(65, 105, 225, 0.5);
-    font-family: Raleway, Avenir Next;
+    font-family: Google Sans;
     font-size: 13px;
     color: rgba(57, 58, 59, 0.75);
     text-align: center;
@@ -761,7 +745,7 @@ a {
     color: white;
     font-size: 13px;
     font-weight: bold;
-    font-family: Raleway, Avenir Next;
+    font-family: Google Sans;
     border-radius: 2px;
     margin: auto 5px;
 }
@@ -771,11 +755,6 @@ a {
     padding: 0 5px;
 }
 
-.training-data-card .tdc-bottom .upload-button:hover {
-    opacity: 0.5;
-    transition: 0.5s;
-}
-
 .training-data-card .tdc-bottom .delete-button {
     width: 35px;
     height: 35px;
@@ -783,7 +762,7 @@ a {
     color: white;
     font-size: 15px;
     font-weight: bold;
-    font-family: Raleway, Avenir Next;
+    font-family: Google Sans;
     border-radius: 2px;
     margin: auto 5px;
 }
@@ -793,10 +772,57 @@ a {
     padding: 0 5px;
 }
 
-.training-data-card .tdc-bottom .delete-button:hover {
-    opacity: 0.5;
-    transition: 0.5s;
+#sandbox {
+    position: relative;
+    width: 100%;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 5px;
 }
+
+#sandbox #editor {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    color: white;
+    border-radius: 5px;
+    background-color: #222f3e;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sandbox #editor #copy-button {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#sandbox #editor #code {
+    padding: 20px;
+    font-family: Source Code Pro;
+}
+
+#sandbox #output {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: #222f3e;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 10px 0;
+}
+
+#sandbox #output p {
+    padding: 10px;
+    font-family: Source Code Pro;
+}
+
 
 /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -858,42 +884,41 @@ a {
 
 .ce-keyword {
     font-weight: 700;
-    color: royalblue;
+    color: rgb(116, 143, 224);
     user-select: text;
 }
 
 .ce-var {
     font-weight: 500;
-    color: royalblue;
+    color: rgb(116, 143, 224);;
     user-select: text;
 }
 
 .ce-function {
     font-weight: 700;
-    color: #2e86de;
+    color: royalblue;
     user-select: text;
 }
 
 .ce-comment {
-    /* font-weight: 500; */
-    color: #5b5c5e;
+    color: #a4a5a7;
     user-select: text;
 }
 
 .ce-string {
     font-weight: 500;
-    color: #5b5c5e;
+    color: #d8d9da;
 }
 
 .ce-key {    
-    color: royalblue;
+    color: rgb(116, 143, 224);;
     padding-left: 30px;
     user-select: text;
 }
 
 .ce-value {
     font-weight: 500;
-    color: #777777;
+    color: #d8d9da;
 }
 
 .ce-param {
@@ -907,7 +932,7 @@ a {
     top: 10px;
     right: 10px;
     font-size: 25px;
-    color: #6772e4;
+    color: rgb(116, 143, 224);;
     cursor: pointer;
 }
 

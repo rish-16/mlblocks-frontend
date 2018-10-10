@@ -24,6 +24,7 @@
         <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500|Roboto+Slab:100,300|Google+Sans:400,500" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
@@ -74,7 +75,6 @@
                 <ul id="navbar">
                     <li>Home</li>
                     <li>About</li>
-                    <li>Integration</li>
                 </ul>
                 <button id="sign-in-button">Sign In</button>
             </div>
@@ -93,9 +93,7 @@
                     
                 <div id="menu-options">
                     <p class="home-tab">Home</p>
-                    <p class="overview-tab">Overview</p>
-                    <p class="challenges-tab">Challenges</p>
-                    <p class="resources-tab">Resources</p>
+                    <p class="overview-tab">About</p>
                 </div>
             </div>            
 
@@ -127,6 +125,10 @@
             </p>
 
             <div class="about-section" id="data-collection">
+                <div class="about-section-right" id="data-collection-section" style="zoom: 1.2;">
+                    
+                </div>
+
                 <div class="about-section-left">
                     <p class="about-section-title">
                         1. Create models on the fly.
@@ -135,10 +137,6 @@
                         Simply upload your data and with a click of a button, begin the training process. 
                         Limited training data? Don't worry. We've got you covered!
                     </p>
-                </div>
-
-                <div class="about-section-right" id="data-collection-section" style="zoom: 1.2;">
-                    
                 </div>
             </div>
 
@@ -163,6 +161,10 @@
             <div id="about-arrow"></div>
 
             <div class="about-section" id="model-deployment">
+                <div class="about-section-right" id="deployment-section">
+                    
+                </div>
+
                 <div class="about-section-left">
                     <p class="about-section-title">
                         3. Deployment one click away.
@@ -170,10 +172,6 @@
                     <p class="about-section-content">
                         Deploy and serve your models from the cloud without touching a single line of code!
                     </p>
-                </div>
-
-                <div class="about-section-right" id="deployment-section">
-                    
                 </div>
             </div>
 
@@ -185,12 +183,58 @@
                         4. Deployment one click away.
                     </p>
                     <p class="about-section-content">
-                        Easily integrate your trained models using a REST URL for instantaneous predictions!
+                        Easily integrate your trained models using a REST URL for instantaneous predictions! 
+                        <br>
+                        <br>
+                        With a simple HTTP request, have an entire Machine Learning suite of tools at the tips of your fingers!
                     </p>
                 </div>
 
                 <div class="about-section-right" id="integration-section">
-                    
+                    <div id="sandbox">
+                        <div id="editor">
+                            <i title="Copy" id="copy-button" class="far fa-copy"></i>
+
+                            <p id="code">
+                                <span class="ce-keyword">import</span> requests
+                                <br>
+                                <span class="ce-keyword">import</span> numpy <span class="ce-keyword">as</span> np
+                                <br>
+                                <span class="ce-keyword">from</span> PIL <span class="ce-keyword">import</span> Image
+                                <br>
+                                <br>
+                                img = Image.<span class="ce-function">open</span>(<span class="ce-string">'my_img.jpg'</span>)
+                                <br>
+                                img = np.array(img)
+                                <br>
+                                <br>
+                                url = <span class="ce-string">'mlblocks.com/predict'</span>
+                                <br>
+                                options  = {
+                                    <br>
+                                    <span class="ce-indent"><span class="ce-key">data:</span> <span class="ce-value">[img]</span></span>, <span class="ce-comment"># Array of images</span>
+                                    <br>
+                                    <span class="ce-indent"><span class="ce-key">api_key:</span> <span class="ce-value">ACCESS_TOKEN</span></span>
+                                    <br>
+                                }
+                                <br>
+                                <br>
+                                prediction = requests.<span class="ce-function">get</span>(url, <span class="ce-param">data=</span> <span class="ce-string">options</span>)
+                            </p>
+                        </div>
+
+                        <div id="output">
+                            <p>
+                                {
+                                    <br>
+                                    <span class="ce-indent"><span class="ce-key">label:</span> </span> <span class="ce-value">'Dog'</span>,
+                                    <br>
+                                    <span class="ce-indent"><span class="ce-key">confidence:</span> </span> <span class="ce-value">98.582</span>
+                                    <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

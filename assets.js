@@ -589,7 +589,7 @@ ClassDisplay.prototype.typeClassLabel = function() {
 	})
 
     typewriter.typeString('Dog')
-        .pauseFor(200)
+        .pauseFor(2000)
         .deleteAll()
         .start()
 
