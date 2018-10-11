@@ -354,24 +354,36 @@ a {
     padding-top: 10px;
     font-size: 18px;
     color: #A7A2A2;
+}
+
+#home #hero div #hero-text #hero-subtitle p {
     line-height: 27px;
 }
 
-#home #hero div #hero-text #hero-subtitle #sign-up-input {
+#home #hero div #hero-text #hero-subtitle #sign-up-form {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    justify-content: space-evenly;
+}
+
+#home #hero div #hero-text #sign-up-area #sign-up-input {
     margin-top: 10px;
-    width: 100%;
+    width: 75%;
     height: 40px;
     border-bottom: 1px solid rgba(121, 116, 116, 0.75);
     font-family: Google Sans;
     font-size: 15px;
     font-weight: 500;
+    margin-right: 5%;
 }
 
-#home #hero div #hero-text #hero-subtitle #sign-up-input::placeholder {
+#home #hero div #hero-text #sign-up-area #sign-up-input::placeholder {
     color: #A7A2A2;
 }
 
-#home #hero div #hero-text #hero-subtitle #sign-up-button {
+#home #hero div #hero-text #sign-up-area #sign-up-button {
     width: 135px;
     height: 42px;
     margin-top: 15px;

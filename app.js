@@ -133,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var promise = firebase.auth().signInWithEmailAndPassword(loginModalEmail.value, loginModalPwd.value)
         promise.catch((err) => {
             console.log(err.message)
+            var msg = new MessageCard(err.message.split('.')[0] + '!')
+            msg.addMessage()
         })
         promise.then((user) => {
             console.log(user)
