@@ -529,15 +529,36 @@ DeploymentCard.prototype.addModel = function(container) {
     container.prepend(this.card)
 }
 
-DeploymentCard.prototype.trainingInit = function() {    
-    this.cardTrainingStatus.innerHTML = 'Training'
+DeploymentCard.prototype.trainingInit = function(listener) {    
+    if (listener) {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Training'
+        }, 500)
+    } else {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Untrained'
+        }, 500)
+    }
 }
 
-DeploymentCard.prototype.handleDeployment = function() {
-    this.cardStatus.style.color = '#10ac84'
-    this.cardStatus.innerHTML = 'Active <i class="fas fa-circle"></i>'
-    this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
-    this.cardType.style.color = 'royalblue'
+DeploymentCard.prototype.handleDeployment = function(listener) {
+    if (listener) {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Trained'
+            this.cardStatus.style.color = '#10ac84'
+            this.cardStatus.innerHTML = 'Active <i class="fas fa-circle"></i>'
+            this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+            this.cardType.style.color = 'royalblue'
+        }, 500)
+    } else {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Trained'
+            this.cardStatus.style.color = '#ee5253'
+            this.cardStatus.innerHTML = 'Inactive <i class="fas fa-circle"></i>'
+            this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+            this.cardType.style.color = 'rgb(109, 102, 102)'            
+        }, 500)
+    }
 }
 
 // ------------------------------------------------------------------------------------------------------------------------

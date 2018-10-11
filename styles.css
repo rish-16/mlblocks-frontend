@@ -440,7 +440,7 @@ a {
     margin-right: 25px;
 }
 
-#responsive-header #right #get-updates-button {
+#responsive-header #right #responsive-sign-in {
     padding: 0 24px;
     margin-top: 20px;
     -webkit-appearance: none;
@@ -460,7 +460,7 @@ a {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-#responsive-header #right #get-updates-button:hover {
+#responsive-header #right #responsive-sign-in:hover {
     background-color: #184d92;
     cursor: pointer;
     transition-duration: 0.5s;
@@ -822,7 +822,6 @@ a {
     padding: 10px;
     font-family: Source Code Pro;
 }
-
 
 /* -------------------------------------------------------------------------------------------------------------- */
 

@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script src="params.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
@@ -72,22 +73,22 @@
         <div id="home">
             <div id="header">
                 <p id="logo">mlblocks</p>
-                <ul id="navbar">
+                <!-- <ul id="navbar">
                     <li>Home</li>
-                    <li>About</li>
-                </ul>
+                    <li>About</li> -->
+                <!-- </ul> -->
                 <button id="sign-in-button">Sign In</button>
             </div>
 
             <div id="responsive-header">
                 <div id="responsive-display" style="width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-between;">
                     <div style="display: flex; flex-direction: row;">
-                        <i class="fas fa-bars" id="menu-bar"></i>
-                        <p id="logo">mlblocks</p>
+                        <!-- <i class="fas fa-bars" id="menu-bar"></i> -->
+                        <p style="margin-left: 20px;" id="logo">mlblocks</p>
                     </div>
     
                     <div id="right">
-                        <input type="button" value="Sign In" id="get-updates-button">
+                        <input type="button" value="Sign In" id="responsive-sign-in">
                     </div>
                 </div>
                     
@@ -205,14 +206,12 @@
                                 <br>
                                 img = Image.<span class="ce-function">open</span>(<span class="ce-string">'my_img.jpg'</span>)
                                 <br>
-                                img = np.array(img)
                                 <br>
-                                <br>
-                                url = <span class="ce-string">'mlblocks.com/predict'</span>
+                                url = <span class="ce-string">'mlblocks.com/XXXXXXXX/predict'</span>
                                 <br>
                                 options  = {
                                     <br>
-                                    <span class="ce-indent"><span class="ce-key">data:</span> <span class="ce-value">[img]</span></span>, <span class="ce-comment"># Array of images</span>
+                                    <span class="ce-indent"><span class="ce-key">data:</span> <span class="ce-value">img</span></span>,
                                     <br>
                                     <span class="ce-indent"><span class="ce-key">api_key:</span> <span class="ce-value">ACCESS_TOKEN</span></span>
                                     <br>
@@ -238,67 +237,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div id="integration">
-            <p id="integration-title">Integration</p>
-            <p id="integration-content">
-                Deploying your model shouldn't be difficult. Use a simple REST URL instead!
-            </p>
-            <div class="section-desc" id="integration-desc">
-                <div id="editor-view">
-                    <div id="code-editor">
-                        <p>
-                            <span class="ce-comment"># !pip install pillow</span>
-                            <br>
-                            <span class="ce-comment"># !pip install numpy</span>
-                            <br>
-                            <span class="ce-keyword">import</span> requests
-                            <br>
-                            <span class="ce-keyword">from</span> PIL <span class="ce-keyword">import</span> Image
-                            <br>
-                            <span class="ce-keyword">import</span> numpy <span class="ce-keyword">as</span> np
-                            <br>
-                            <br>
-                            <span class="ce-comment"># Testing instances</span>
-                            <br>
-                            <span class="ce-var">image</span> = Image.<span class="ce-function">open</span>(<span class="ce-param">file=</span><span class="ce-string">'image.jpg'</span> )
-                            <br>
-                            <br>
-                            <span class="ce-comment"># Instantiate model</span>
-                            <br>
-                            <span class="ce-var">url</span> = <span class="ce-string">'mlblocks.com/predict/'</span>
-                            <br>
-                            options = {
-                                <br>
-                                <span class="ce-key">api_reference: <span class="ce-value">'API_ACCESS_TOKEN'</span></span>,
-                                <br>
-                                <span class="ce-key">data: <span class="ce-value">image</span></span>
-                                <br>
-                            }
-                            <br>
-                            <br>
-                            <span class="ce-comment"># Get predictions response from trained model</span>
-                            <br>
-                            predictions = request.<span class="ce-function">get</span>(url, <span class="ce-param">data=</span>options)
-                        </p>
-                        <i title="Copy" id="copy-button" class="far fa-copy"></i>
-                    </div>
-                    
-                    <p id="output">JSON Output:</p>
-                    <div id="code-output">
-                        <p>
-                            {
-                                <br>
-                                <span class="ce-key">class_label:</span> <span class="ce-value">'dog'</span>,
-                                <br>
-                                <span class="ce-key">confidence:</span> <span class="ce-value">0.985</span>,
-                                <br>
-                            }
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         
     </body>
 </html>
