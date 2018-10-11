@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var DBref = firebase.database().ref()
     
     const signInButton = document.getElementById('sign-in-button')
+    const signUpbutton = document.getElementById('sign-up-button')
+    const signUpInput = document.getElementById('sign-up-input')
 
     const loginModal = document.getElementById('login-box')
     const registerModal = document.getElementById('register-box')
@@ -79,6 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    signUpbutton.onclick = () => {
+        if (validateEmail(signUpInput.value)) {
+            registerModal.style.display = 'block'
+            registerModalEmail.value = signUpInput.value
+        } else {
+            var msg = new MessageCard("Oops! That doesn't look like an email...")
+            msg.addMessage()
+        }
+    }
+
     signInButton.onclick = () => {
         loginModal.style.display = 'block'
     }
@@ -101,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         var promise = firebase.auth().createUserWithEmailAndPassword(registerModalEmail.value, registerModalPwd.value)
         promise.catch((err) => {
             console.log(err.message)
+            var msg = new MessageCard(err.message)
+            msg.addMessage()
         })
         promise.then((user) => {
             console.log(user)
