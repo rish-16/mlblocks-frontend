@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var allModels = []
 
+    var viewType = 'GRID'
+
     const logoutButton = document.getElementById('logout-button')
     const createModelButton = document.getElementById('create-project-button')
     const modelContainer = document.getElementById('workbench-cards-container')
@@ -33,11 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const addClassButton = document.getElementById('add-class-button')
     const saveProjectButton = document.getElementById('save-project-button')
     const cancelButton = document.getElementById('cancel-button')
-    const tdcContainer = document.getElementById('training-data-container')
     const tdcContainerClassCards = document.getElementById('training-data-container-classcards')
 
-    function loadProjects(param, userID) {
+    const gridViewButton = document.getElementById('workbench-view-grid')
+    const listViewButton = document.getElementById('workbench-view-list')
+
+    function loadProjects(param, userID, viewType) {
         if (userID) {
+            modelContainer.innerHTML = ''
             DBref.child('Projects').child(userID).once(param, (snapshot) => {
                 if (snapshot.exists()) {
                     snapshot.forEach((projectID) => {
@@ -55,9 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         var classLabels = Object.keys(classes)
                         var numClasses = classLabels.length
             
-                        var card = new ModelCard(doc, userID, pID, title, type, url, status, trainingStatus, numClasses, classLabels, distribution)
-                        card.addModel(modelContainer)
-                        allModels.push(card)
+                        if (viewType == 'GRID') {
+                            allModels = []
+                            var card = new ModelCard(doc, userID, pID, title, type, url, status, trainingStatus, numClasses, classLabels, distribution)
+                            card.addModel(modelContainer)
+                            allModels.push(card)
+                        } else if (viewType == 'LIST') {
+                            allModels = []
+                            var card = new ModelCardList(doc, userID, pID, title, type, url, status, trainingStatus, numClasses, classLabels, distribution)
+                            card.addModel(modelContainer)
+                            allModels.push(card)
+                        }
                     })                    
                 } else {
                     console.log('No projects')
@@ -67,6 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.log('No user logged in.')
         }
+    }
+
+    gridViewButton.onclick = () => {
+        viewType = 'GRID'
+        loadProjects('value', userID, viewType)
+    }
+
+    listViewButton.onclick = () => {
+        viewType = 'LIST'
+        loadProjects('value', userID, viewType)
     }
 
     function showEmptyDB() {
@@ -100,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user) {
             userID = firebase.auth().currentUser.uid
             console.log(userID)
-            loadProjects('value', userID)
+            loadProjects('value', userID, viewType)
         } else {
             // No user is signed in.
             console.log('No user has signed in.')
@@ -188,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newProjectModal.style.display = 'none'
             tdcContainerClassCards.innerHTML = ''
             modelContainer.innerHTML = ''
-            loadProjects('value', userID)
+            loadProjects('value', userID, viewType)
             var msg = new MessageCard('Project successfully saved!')
             msg.addMessage()
         } else {

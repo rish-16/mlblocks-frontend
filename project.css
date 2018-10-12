@@ -243,6 +243,18 @@ a {
     font-weight: 500;
 }
 
+.project-card .project-card-top .project-options-download {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card .project-card-top .project-options-download:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
 .project-card .project-card-top .project-options-toggle-status {
     font-size: 15px;
     color: rgba(109, 102, 102, 0.5);
@@ -364,6 +376,180 @@ a {
 }
 
 .project-card .model-divider {
+    width: 110px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.project-card-list {
+    width: 90%;
+    height: 45px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 15px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.project-card-list .project-card-top {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-card-list .project-card-top .project-top-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-card-list .project-card-top .project-creation-date {
+    font-size: 11px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+    font-weight: 500;
+}
+
+.project-card-list .project-card-top .project-options-download {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card-list .project-card-top .project-options-download:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+.project-card-list .project-card-top .project-options-toggle-status {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card-list .project-card-top .project-options-toggle-status:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+.project-card-list .project-card-top .project-options-delete {
+    font-size: 15px;
+    color: rgba(109, 102, 102, 0.5);
+    padding: 0 10px;
+    margin: auto 0;
+}
+
+.project-card-list .project-card-top .project-options-delete:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+.project-card-list .model-display {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border-radius: 100%;
+    text-align: center;
+    background-color: #DEE2E8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.project-card-list .model-display p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    margin: auto 0;
+}
+
+.project-card-list .model-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(51, 50, 50);
+    padding: 15px 0 5px 0;
+}
+
+.project-card-list .model-classes {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    color: rgb(51, 50, 50);
+}
+
+.project-card-list .model-status-node {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.project-card-list .model-training-status {
+    position: relative;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 5px 0;
+    color: rgba(121, 116, 116, 1);
+}
+
+.project-card .model-training-status i {
+    color: rgba(121, 116, 116, 1);
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.project-card-list .model-status {
+    position: relative;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 5px 0;
+    color: #10ac84;
+}
+
+.project-card-list .model-status i {
+    font-size: 10px;
+    padding: 0 5px;
+}
+
+.project-card-list .model-classes span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.project-card-list .model-type {
+    color: rgb(109, 102, 102);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    cursor: pointer;
+}
+
+.project-card-list .model-type i {
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.project-card-list .model-type:hover {
+    color: royalblue;
+    /* font-weight: bold; */
+    transition: 0.5s;
+}
+
+.project-card-list .model-divider {
     width: 110px;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.1);
@@ -713,7 +899,6 @@ a {
 #project-panel #panel-body {
     width: 85%;
     height: 350px;
-    background-color: red;
     margin: 0 auto;
     overflow: scroll;
 }

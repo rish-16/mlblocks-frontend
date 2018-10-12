@@ -1087,6 +1087,10 @@ a {
         background-position: center;
     }
 
+    #home #hero div #hero-text #hero-subtitle p {
+        font-size: 15px;
+    }
+
     #home #header {
         display: none;
     }
@@ -1115,7 +1119,7 @@ a {
         padding-top: 75px;
     }
 
-    #integration-content {
+    #about-content {
         width: 70%;
     }
 }
