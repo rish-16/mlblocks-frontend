@@ -169,7 +169,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     if (task) {
 
         var http = new XMLHttpRequest()
-        var url = 'http://3.0.2.90:5000/' + this.pID + '/delete'
+        var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
 
         http.open('POST', url, true)
 
@@ -338,7 +338,7 @@ Project.prototype.handleUpload = function() {
     const STref = firebase.storage().ref()
 
     var http = new XMLHttpRequest()
-    var url = 'http://3.0.2.90:5000/' + this.projectID + '/train'
+    var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
 
     http.open('POST', url, true)
 
