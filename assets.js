@@ -26,6 +26,10 @@ ModelCard.prototype.addModel = function(container) {
     var options = document.createElement('div')
     options.classList += 'project-top-options'
 
+    this.optionsNodeDownload = document.createElement('i')
+    this.optionsNodeDownload.innerHTML = '<i class="fas fa-file-download"></i>'
+    this.optionsNodeDownload.classList += 'project-options-download'
+
     this.optionsNodeTS = document.createElement('i')
     this.optionsNodeTS.classList += 'project-options-toggle-status'
     if (this.status == 'Inactive') {
@@ -38,8 +42,14 @@ ModelCard.prototype.addModel = function(container) {
     this.optionsNodeDel.innerHTML = '<i class="fas fa-trash-alt"></i>'
     this.optionsNodeDel.classList += 'project-options-delete'
 
+    options.appendChild(this.optionsNodeDownload)
     options.appendChild(this.optionsNodeTS)
     options.appendChild(this.optionsNodeDel)
+
+    this.optionsNodeDownload.onclick = () => {
+        // Download H5 weights from server
+        console.log('Downloading file')
+    }
 
     this.optionsNodeTS.onclick = () => {
         this.handleDeployment()
@@ -214,16 +224,228 @@ ModelCard.prototype.handleDeletion = function(workspace) {
 
 // ------------------------------------------------------------------------------------------------------------------------
 
-function TrainingData() {
-    this.files = null
+function ModelCardList(DOC, userID, pID, title, type, url, status, trainingStatus, numClasses, pClasses, distribution) {
+    this.DOC = DOC
+    this.uID = userID
+    this.pID = pID
+    this.title = title
+    this.type = type
+    this.purl = url
+    this.status = status
+    this.tStatus = trainingStatus
+    this.numClasses = numClasses
+    this.pClasses = pClasses
+    this.distribution = distribution
 }
 
-TrainingData.prototype.getData = () => {
-    return this.files
+ModelCardList.prototype.addModel = function(container) {
+    this.card = document.createElement('div')
+    this.card.classList += 'project-card-list'
+
+    var cardTop = document.createElement('div')
+    cardTop.classList += 'project-card-top'
+
+    var dateNode = document.createElement('p')
+    dateNode.innerHTML = this.DOC
+    dateNode.classList += 'project-creation-date'
+
+    var options = document.createElement('div')
+    options.classList += 'project-top-options'
+
+    this.optionsNodeDownload = document.createElement('i')
+    this.optionsNodeDownload.innerHTML = '<i class="fas fa-file-download"></i>'
+    this.optionsNodeDownload.classList += 'project-options-download'
+
+    this.optionsNodeTS = document.createElement('i')
+    this.optionsNodeTS.classList += 'project-options-toggle-status'
+    if (this.status == 'Inactive') {
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+    } else if (this.status == 'Active') {
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+    }
+
+    this.optionsNodeDel = document.createElement('i')
+    this.optionsNodeDel.innerHTML = '<i class="fas fa-trash-alt"></i>'
+    this.optionsNodeDel.classList += 'project-options-delete'
+
+    options.appendChild(this.optionsNodeDownload)
+    options.appendChild(this.optionsNodeTS)
+    options.appendChild(this.optionsNodeDel)
+
+    this.optionsNodeDownload.onclick = () => {
+        // Download H5 weights from server
+        console.log('Downloading file')
+    }
+
+    this.optionsNodeTS.onclick = () => {
+        this.handleDeployment()
+    }
+
+    this.optionsNodeDel.onclick = () => {
+        this.handleDeletion(container)
+    }
+
+    var cardDisplay = document.createElement('div')
+    cardDisplay.classList = 'model-display'
+
+    var cardDisplayP = document.createElement('p')
+    var matches = this.title[0].toUpperCase()
+    cardDisplayP.innerText = matches
+
+    var cardTitle = document.createElement('p')
+    cardTitle.classList += 'model-title'
+    cardTitle.innerText = this.title
+
+    var cardClasses = document.createElement('p')
+    cardClasses.classList += 'model-classes'
+    cardClasses.innerText = 'Classes: '
+
+    var cardClassesSpan = document.createElement('span')
+    cardClassesSpan.innerText = this.numClasses
+    cardClasses.appendChild(cardClassesSpan)
+
+    var statusNode = document.createElement('div')
+    statusNode.classList = 'model-status-node'
+
+    this.cardTrainingStatus = document.createElement('p')
+    this.cardTrainingStatus.classList = 'model-training-status'
+    if (this.tStatus) {
+        this.cardTrainingStatus.innerHTML = 'Trained'
+    } else if (this.tStatus == false) {
+        this.cardTrainingStatus.innerHTML = 'Untrained'
+    }
+
+    this.cardStatus = document.createElement('p')
+    this.cardStatus.classList += 'model-status'
+    this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+    if (this.status == 'Inactive') {
+        this.cardStatus.style.color = '#ee5253'
+    } else if (this.status == 'Active') {
+        this.cardStatus.style.color = '#10ac84'
+    }
+
+    statusNode.appendChild(this.cardTrainingStatus)
+    statusNode.appendChild(this.cardStatus)
+
+    var cardDivider = document.createElement('div')
+    cardDivider.classList += 'model-divider'
+
+    var cardType = document.createElement('p')
+    cardType.innerHTML = this.purl + ' <i class="far fa-copy"></i>'
+    cardType.classList = 'model-type'
+
+    cardType.onclick = () => {
+        const el = document.createElement('textarea');
+        el.value = this.purl;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        var msg = new MessageCard('Copied to clipboard!')
+        msg.addMessage()
+    }
+
+    cardTop.appendChild(dateNode)
+    cardTop.appendChild(options)
+    this.card.appendChild(cardTop)
+
+    cardDisplay.appendChild(cardDisplayP)
+    this.card.appendChild(cardDisplay)
+
+    this.card.appendChild(cardTitle)
+    this.card.appendChild(cardClasses)
+    this.card.appendChild(statusNode)
+
+    this.card.appendChild(cardDivider)
+    this.card.appendChild(cardType)
+
+    container.prepend(this.card)
 }
 
-TrainingData.prototype.setData = (fileList) => {
-    this.files = fileList
+ModelCardList.prototype.handleDeployment = function() {
+    if (this.status == 'Inactive') {
+        if (this.tStatus == false) {
+            var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
+            if (task) {
+                this.status = 'Active'
+                this.cardStatus.style.color = '#10ac84'
+                this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+                this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+                firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Active')
+                var msg = new MessageCard('Model has been successfully deployed.')
+                msg.addMessage()
+            } else if (this.tStatus == true) {
+                this.status = 'Active'
+                this.cardStatus.style.color = '#10ac84'
+                this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+                this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+                firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Active')
+                var msg = new MessageCard('Model has been successfully deployed.')
+                msg.addMessage()                
+            }
+        }
+    } else if (this.status == 'Active') {
+        this.status = 'Inactive'
+        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
+        this.cardStatus.style.color = '#ee5253'
+        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+        firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Inactive')
+        var msg = new MessageCard('Model has been successfully deactivated.')
+        msg.addMessage()
+    }
+}
+
+ModelCardList.prototype.handleDeletion = function(workspace) {
+    let task
+    if (this.status == 'Active') {
+        task = window.confirm('Warning: The project is Live. Are you sure you want to delete the project? This cannot be undone.')
+    } else {
+        task = window.confirm('Are you sure you want to delete the project? This cannot be undone.')
+    }
+    if (task) {
+
+        var http = new XMLHttpRequest()
+        var url = 'http://3.0.2.90:5000/' + this.pID + '/delete'
+
+        http.open('POST', url, true)
+
+        // Send the proper header information along with the request
+        //http.setRequestHeader('Content-type', 'multipart/form-data')
+        var formData = new FormData();
+        formData.append("userID", this.uID);
+
+        http.onreadystatechange = function() {
+            // Call a function when the state changes
+            if (http.readyState == 4 && http.status == 200) {
+                window.alert(http.responseText)
+            }
+        }
+
+        http.send(formData)
+
+
+        // Delete from Database
+        const ref = firebase.database().ref()
+        ref.child('Projects').child(this.uID).child(this.pID).remove()
+
+        // Delete from Storage
+        const cont = firebase.storage().ref()
+        for (var i = 0; i < this.distribution.length; i++) {
+            for (var j = 0; j < this.distribution[i]; j++) {
+                var deleteTask = cont.child('Projects').child(this.pID).child(this.pClasses[i]).child('image' + j + '.jpg').delete()
+                deleteTask.then(()=> {
+                    console.log('Deleting: image' + j + '.jpg from Storage')
+                }, (error) => {
+                    console.log(error)
+                })
+            }
+        }
+
+        
+        workspace.removeChild(this.card)
+        var msg = new MessageCard('Project successfully deleted!')
+        msg.addMessage()
+    }
 }
 
 // ------------------------------------------------------------------------------------------------------------------------
@@ -529,15 +751,36 @@ DeploymentCard.prototype.addModel = function(container) {
     container.prepend(this.card)
 }
 
-DeploymentCard.prototype.trainingInit = function() {    
-    this.cardTrainingStatus.innerHTML = 'Training'
+DeploymentCard.prototype.trainingInit = function(listener) {    
+    if (listener) {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Training'
+        }, 500)
+    } else {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Untrained'
+        }, 500)
+    }
 }
 
-DeploymentCard.prototype.handleDeployment = function() {
-    this.cardStatus.style.color = '#10ac84'
-    this.cardStatus.innerHTML = 'Active <i class="fas fa-circle"></i>'
-    this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
-    this.cardType.style.color = 'royalblue'
+DeploymentCard.prototype.handleDeployment = function(listener) {
+    if (listener) {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Trained'
+            this.cardStatus.style.color = '#10ac84'
+            this.cardStatus.innerHTML = 'Active <i class="fas fa-circle"></i>'
+            this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
+            this.cardType.style.color = 'royalblue'
+        }, 500)
+    } else {
+        setTimeout(() => {
+            this.cardTrainingStatus.innerHTML = 'Trained'
+            this.cardStatus.style.color = '#ee5253'
+            this.cardStatus.innerHTML = 'Inactive <i class="fas fa-circle"></i>'
+            this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
+            this.cardType.style.color = 'rgb(109, 102, 102)'            
+        }, 500)
+    }
 }
 
 // ------------------------------------------------------------------------------------------------------------------------
@@ -589,7 +832,7 @@ ClassDisplay.prototype.typeClassLabel = function() {
 	})
 
     typewriter.typeString('Dog')
-        .pauseFor(200)
+        .pauseFor(2000)
         .deleteAll()
         .start()
 
