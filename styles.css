@@ -526,10 +526,18 @@ a {
 
 #about-content {
     width: 50%;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 25px;
+    font-weight: bold;
     height: auto;
     margin: 0 auto;
+}
+#about-subcontent {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    height: auto;
+    top: 40px;
+    
 }
 
 #about-arrow {

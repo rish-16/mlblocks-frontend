@@ -405,7 +405,7 @@ ModelCardList.prototype.handleDeletion = function(workspace) {
     if (task) {
 
         var http = new XMLHttpRequest()
-        var url = 'http://3.0.2.90:5000/' + this.pID + '/delete'
+        var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
 
         http.open('POST', url, true)
 
