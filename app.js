@@ -10,6 +10,7 @@ firebase.initializeApp(config);
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Add loaded')
+    mixpanel.track('Site visit')
 
     var DBref = firebase.database().ref()
     
