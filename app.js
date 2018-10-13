@@ -92,10 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     signInButton.onclick = () => {
+        mixpanel.track('User sign in clicked')
         loginModal.style.display = 'block'
     }
 
     responsiveSignInButton.onclick = () => {
+        mixpanel.track('User sign in clicked')
         loginModal.style.display = 'block'
     }
 
@@ -110,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     registerModalSubmit.onclick = () => {
+        mixpanel.track('User submitted register info')
         var promise = firebase.auth().createUserWithEmailAndPassword(registerModalEmail.value, registerModalPwd.value)
         promise.catch((err) => {
             console.log(err.message)
@@ -130,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     loginModalSubmit.onclick = () => {
+        mixpanel.track('User logging in')
         var promise = firebase.auth().signInWithEmailAndPassword(loginModalEmail.value, loginModalPwd.value)
         promise.catch((err) => {
             console.log(err.message)
@@ -143,10 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     loginModalClose.onclick = () => {
+        mixpanel.track('User closed login')
         loginModal.style.display = 'none'
     }
 
     registerModalClose.onclick = () => {
+        mixpanel.track('User closed registration')
         registerModal.style.display = 'none'
     }
 

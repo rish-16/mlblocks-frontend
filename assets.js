@@ -141,6 +141,7 @@ ModelCard.prototype.handleDeployment = function() {
         if (this.tStatus == false) {
             var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
             if (task) {
+                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -149,6 +150,7 @@ ModelCard.prototype.handleDeployment = function() {
                 var msg = new MessageCard('Model has been successfully deployed.')
                 msg.addMessage()
             } else if (this.tStatus == true) {
+                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -159,6 +161,7 @@ ModelCard.prototype.handleDeployment = function() {
             }
         }
     } else if (this.status == 'Active') {
+        mixpanel.track('Model deactivated')
         this.status = 'Inactive'
         this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
         this.cardStatus.style.color = '#ee5253'
@@ -197,6 +200,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
 
         http.send(formData)
 
+        mixpanel.track('Model deleted')
 
         // Delete from Database
         const ref = firebase.database().ref()
@@ -222,23 +226,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     }
 }
 
-// ------------------------------------------------------------------------------------------------------------------------
-
-function ModelCardList(DOC, userID, pID, title, type, url, status, trainingStatus, numClasses, pClasses, distribution) {
-    this.DOC = DOC
-    this.uID = userID
-    this.pID = pID
-    this.title = title
-    this.type = type
-    this.purl = url
-    this.status = status
-    this.tStatus = trainingStatus
-    this.numClasses = numClasses
-    this.pClasses = pClasses
-    this.distribution = distribution
-}
-
-ModelCardList.prototype.addModel = function(container) {
+ModelCard.prototype.addModelList = function(container) {
     this.card = document.createElement('div')
     this.card.classList += 'project-card-list'
 
@@ -362,92 +350,6 @@ ModelCardList.prototype.addModel = function(container) {
     container.prepend(this.card)
 }
 
-ModelCardList.prototype.handleDeployment = function() {
-    if (this.status == 'Inactive') {
-        if (this.tStatus == false) {
-            var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
-            if (task) {
-                this.status = 'Active'
-                this.cardStatus.style.color = '#10ac84'
-                this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
-                this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
-                firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Active')
-                var msg = new MessageCard('Model has been successfully deployed.')
-                msg.addMessage()
-            } else if (this.tStatus == true) {
-                this.status = 'Active'
-                this.cardStatus.style.color = '#10ac84'
-                this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
-                this.optionsNodeTS.innerHTML = '<i class="fas fa-stop"></i>'
-                firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Active')
-                var msg = new MessageCard('Model has been successfully deployed.')
-                msg.addMessage()                
-            }
-        }
-    } else if (this.status == 'Active') {
-        this.status = 'Inactive'
-        this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
-        this.cardStatus.style.color = '#ee5253'
-        this.optionsNodeTS.innerHTML = '<i class="fas fa-play"></i>'
-        firebase.database().ref().child('Projects').child(this.uID).child(this.pID).child('STATUS').set('Inactive')
-        var msg = new MessageCard('Model has been successfully deactivated.')
-        msg.addMessage()
-    }
-}
-
-ModelCardList.prototype.handleDeletion = function(workspace) {
-    let task
-    if (this.status == 'Active') {
-        task = window.confirm('Warning: The project is Live. Are you sure you want to delete the project? This cannot be undone.')
-    } else {
-        task = window.confirm('Are you sure you want to delete the project? This cannot be undone.')
-    }
-    if (task) {
-
-        var http = new XMLHttpRequest()
-        var url = 'http://3.0.2.90:5000/' + this.pID + '/delete'
-
-        http.open('POST', url, true)
-
-        // Send the proper header information along with the request
-        //http.setRequestHeader('Content-type', 'multipart/form-data')
-        var formData = new FormData();
-        formData.append("userID", this.uID);
-
-        http.onreadystatechange = function() {
-            // Call a function when the state changes
-            if (http.readyState == 4 && http.status == 200) {
-                window.alert(http.responseText)
-            }
-        }
-
-        http.send(formData)
-
-
-        // Delete from Database
-        const ref = firebase.database().ref()
-        ref.child('Projects').child(this.uID).child(this.pID).remove()
-
-        // Delete from Storage
-        const cont = firebase.storage().ref()
-        for (var i = 0; i < this.distribution.length; i++) {
-            for (var j = 0; j < this.distribution[i]; j++) {
-                var deleteTask = cont.child('Projects').child(this.pID).child(this.pClasses[i]).child('image' + j + '.jpg').delete()
-                deleteTask.then(()=> {
-                    console.log('Deleting: image' + j + '.jpg from Storage')
-                }, (error) => {
-                    console.log(error)
-                })
-            }
-        }
-
-        
-        workspace.removeChild(this.card)
-        var msg = new MessageCard('Project successfully deleted!')
-        msg.addMessage()
-    }
-}
-
 // ------------------------------------------------------------------------------------------------------------------------
 
 function ClassCard() {
@@ -497,6 +399,7 @@ ClassCard.prototype.addClassCard = function(workspace, cardIDarray, cardObjects)
     this.deleteButton.classList += 'delete-button'
 
     this.deleteButton.addEventListener('click', () => {
+        mixpanel.track('Class deleted')
         console.log('Deleting card')
         workspace.removeChild(card)
         var index = cardIDarray.indexOf(card.id);
@@ -578,6 +481,8 @@ Project.prototype.handleUpload = function() {
 
     http.send(formData)
 
+    mixpanel.track('Project created')
+
     projectData = {
         'ID': this.projectID,
         'USER': this.projectUser,
@@ -633,6 +538,8 @@ MessageCard.prototype.addMessage = function() {
 
     card.appendChild(p)
     document.body.appendChild(card)
+
+    mixpanel.track('Message: ' + this.message)
 
     setTimeout(function() {
         document.body.removeChild(card)
