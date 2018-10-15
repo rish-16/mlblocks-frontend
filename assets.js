@@ -141,6 +141,7 @@ ModelCard.prototype.handleDeployment = function() {
         if (this.tStatus == false) {
             var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
             if (task) {
+                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -149,6 +150,7 @@ ModelCard.prototype.handleDeployment = function() {
                 var msg = new MessageCard('Model has been successfully deployed.')
                 msg.addMessage()
             } else if (this.tStatus == true) {
+                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -159,6 +161,7 @@ ModelCard.prototype.handleDeployment = function() {
             }
         }
     } else if (this.status == 'Active') {
+        mixpanel.track('Model deactivated')
         this.status = 'Inactive'
         this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
         this.cardStatus.style.color = '#ee5253'
@@ -197,6 +200,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
 
         http.send(formData)
 
+        mixpanel.track('Model deleted')
 
         // Delete from Database
         const ref = firebase.database().ref()
@@ -222,23 +226,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     }
 }
 
-// ------------------------------------------------------------------------------------------------------------------------
-
-function ModelCardList(DOC, userID, pID, title, type, url, status, trainingStatus, numClasses, pClasses, distribution) {
-    this.DOC = DOC
-    this.uID = userID
-    this.pID = pID
-    this.title = title
-    this.type = type
-    this.purl = url
-    this.status = status
-    this.tStatus = trainingStatus
-    this.numClasses = numClasses
-    this.pClasses = pClasses
-    this.distribution = distribution
-}
-
-ModelCardList.prototype.addModel = function(container) {
+ModelCard.prototype.addModelList = function(container) {
     this.card = document.createElement('div')
     this.card.classList += 'project-card-list'
 
@@ -362,6 +350,7 @@ ModelCardList.prototype.addModel = function(container) {
     container.prepend(this.card)
 }
 
+<<<<<<< HEAD
 ModelCardList.prototype.handleDeployment = function() {
     if (this.status == 'Inactive') {
         if (this.tStatus == false) {
@@ -448,6 +437,8 @@ ModelCardList.prototype.handleDeletion = function(workspace) {
     }
 }
 
+=======
+>>>>>>> a61b1b3ff0e856a61aa08a801ae8c15136f942c9
 // ------------------------------------------------------------------------------------------------------------------------
 
 function ClassCard() {
@@ -497,6 +488,7 @@ ClassCard.prototype.addClassCard = function(workspace, cardIDarray, cardObjects)
     this.deleteButton.classList += 'delete-button'
 
     this.deleteButton.addEventListener('click', () => {
+        mixpanel.track('Class deleted')
         console.log('Deleting card')
         workspace.removeChild(card)
         var index = cardIDarray.indexOf(card.id);
@@ -578,6 +570,8 @@ Project.prototype.handleUpload = function() {
 
     http.send(formData)
 
+    mixpanel.track('Project created')
+
     projectData = {
         'ID': this.projectID,
         'USER': this.projectUser,
@@ -633,6 +627,8 @@ MessageCard.prototype.addMessage = function() {
 
     card.appendChild(p)
     document.body.appendChild(card)
+
+    mixpanel.track('Message: ' + this.message)
 
     setTimeout(function() {
         document.body.removeChild(card)
