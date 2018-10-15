@@ -120,7 +120,7 @@ a {
     color: white;
     background-color: royalblue;
     border-radius: 5px;
-} 
+}
 
 #login-box #sign-in-submit:hover {
     opacity: 0.85;
@@ -228,7 +228,7 @@ a {
     color: white;
     background-color: royalblue;
     border-radius: 5px;
-} 
+}
 
 #register-box #sign-up-submit:hover {
     opacity: 0.85;
@@ -249,7 +249,6 @@ a {
 /* -------------------------------------------------------------------------------------------------------------- */
 
 #home {
-    position: absolute;
     width: 100%;
     height: 100%;
 }
@@ -420,7 +419,7 @@ a {
 
 #responsive-header {
     width: 100%;
-    height: 80px;   
+    height: 80px;
     display: flex;
     background-color: #fff;
     justify-content: space-between;
@@ -510,8 +509,6 @@ a {
 /* -------------------------------------------------------------------------------------------------------------- */
 
 #about {
-    position: absolute;
-    top: 100%;
     width: 100%;
     height: auto;
     text-align: center;
@@ -958,7 +955,7 @@ a {
     color: #d8d9da;
 }
 
-.ce-key {    
+.ce-key {
     color: rgb(116, 143, 224);;
     padding-left: 30px;
     user-select: text;
@@ -1014,7 +1011,7 @@ a {
     padding-left: 10px;
     padding-bottom: 15px;
     padding-top: 10px;
-    user-select: text;    
+    user-select: text;
     font-family: Google Sans;
     overflow: scroll;
 }
@@ -1023,11 +1020,101 @@ a {
     font-weight: 600;
     color: royalblue;
     padding-left: 30px;
-    user-select: text;    
+    user-select: text;
 }
 
 #editor-view #code-output p .ce-indent {
     padding-left: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#info {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    text-align: center;
+    margin: 30px 0 70px 0;
+}
+
+#info #info-title {
+    font-size: 22px;
+    color: #77797c;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#info #info-content {
+    width: 50%;
+    text-align: left;
+    margin: 25px auto 10px auto;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#info #info-content p {
+    margin-bottom: 20px;
+}
+
+#info #info-content i {
+    font-size: 10px;
+    padding: 0 15px 0 0;
+    color: royalblue;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#contact {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin: 30px 0 30px 0;
+}
+
+#contact-title {
+    width: 85%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #77797c;
+    margin: 50px auto 10px auto;
+}
+
+#contact-subtitle {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#sign-up-container {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+#sign-up-container #sign-up-container-email {
+    width: 55%;
+    height: 40px;
+    border-bottom: 1px solid rgba(121, 116, 116, 0.75);
+    font-family: Google Sans;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+#sign-up-container #sign-up-container-submit {
+    width: 135px;
+    height: 42px;
+    font-family: Google Sans;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
@@ -1067,7 +1154,7 @@ a {
 }
 
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
+    from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
 }
 
@@ -1077,13 +1164,58 @@ a {
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
+    from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#footer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(252, 250, 250);
+}
+
+#footer-social {
+    margin: auto 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#footer-social i {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 15px;
+    color: #888787;
+}
+
+#footer-social i:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+#footer p {
+    margin: auto 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#footer p span {
+    margin: 0 7px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px 0;
+    border-bottom: 3px solid royalblue;
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
@@ -1127,12 +1259,39 @@ a {
         padding-top: 75px;
     }
 
+    #info #info-content {
+        width: 85%;
+    }
+
     #about-content {
         width: 70%;
     }
-}
 
-@media (max-width: 625px) {
+    #sign-up-container {
+        width: 95%;
+    }
+
+    #sign-up-container-email {
+        width: 75%;
+        margin: 10px 0;
+    }
+
+    #sign-up-container-submit {
+        margin: 10px 0;
+    }
+
+    #footer {
+        height: 100px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #footer-social {
+        width: 100px;
+        margin: 15px auto 0 auto;
+    }
+
     .about-section .about-section-left {
         width: 90%;
         text-align: left;
@@ -1180,32 +1339,6 @@ a {
         width: 100%;
         text-align: center;
     }
-    /* -------------------------------------------------------------------------------------------------------------- */
-
-#footer {
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #fff;
 }
 
-#footer p {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-#footer p span {
-    margin: 0 7px;
-    font-size: 16px;
-    font-weight: bold;
-    /* line-height: 75px; */
-    padding: 2px 0;
-    border-bottom: 3px solid royalblue;   
-}
-}
+/* -------------------------------------------------------------------------------------------------------------- */

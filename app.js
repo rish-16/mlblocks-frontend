@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroTitleSpan = document.getElementById('hero-title-span')
 
+    const containerEmail= document.getElementById('sign-up-container-email')
+    const containerSubmit = document.getElementById('sign-up-container-submit')
+
     const trainingSection = document.getElementById('training-section')
     const dataCollectionSection = document.getElementById('data-collection-section')
     const deploymentSection = document.getElementById('deployment-section')
@@ -110,6 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
     registerLoginButton.onclick = () => {
         loginModal.style.display = 'block'
         registerModal.style.display = 'none'
+    }
+
+    containerSubmit.onclick = () => {
+        if (validateEmail(containerEmail.value)) {
+            document.body.scrollTop = document.documentElement.scrollTop = 0
+            registerModal.style.display = 'block'
+            registerModalEmail.value = containerEmail.value
+            containerEmail.value = ''
+        } else {
+            var msg = new MessageCard("Oops! That doesn't look like an email...")
+            msg.addMessage()
+        }
     }
 
     registerModalSubmit.onclick = () => {
