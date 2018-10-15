@@ -1039,7 +1039,7 @@ a {
 
 #info #info-title {
     font-size: 22px;
-    color: #77797c;
+    color: #444547;
     font-weight: bold;
     padding: 20px 0;
 }
@@ -1075,12 +1075,13 @@ a {
     width: 85%;
     font-size: 25px;
     font-weight: bold;
-    color: #77797c;
+    color: #444547;
     margin: 50px auto 10px auto;
 }
 
 #contact-subtitle {
     font-weight: 500;
+    color: #77797c;
     font-size: 17px;
 }
 
