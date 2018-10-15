@@ -1180,4 +1180,32 @@ a {
         width: 100%;
         text-align: center;
     }
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+#footer {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#footer p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#footer p span {
+    margin: 0 7px;
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 75px; */
+    padding: 2px 0;
+    border-bottom: 3px solid royalblue;   
+}
 }

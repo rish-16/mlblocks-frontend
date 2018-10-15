@@ -350,8 +350,8 @@ ModelCard.prototype.addModelList = function(container) {
     container.prepend(this.card)
 }
 
-<<<<<<< HEAD
-ModelCardList.prototype.handleDeployment = function() {
+
+ModelCard.prototype.handleDeployment = function() {
     if (this.status == 'Inactive') {
         if (this.tStatus == false) {
             var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
@@ -384,7 +384,7 @@ ModelCardList.prototype.handleDeployment = function() {
     }
 }
 
-ModelCardList.prototype.handleDeletion = function(workspace) {
+ModelCard.prototype.handleDeletion = function(workspace) {
     let task
     if (this.status == 'Active') {
         task = window.confirm('Warning: The project is Live. Are you sure you want to delete the project? This cannot be undone.')
@@ -436,9 +436,6 @@ ModelCardList.prototype.handleDeletion = function(workspace) {
         msg.addMessage()
     }
 }
-
-=======
->>>>>>> a61b1b3ff0e856a61aa08a801ae8c15136f942c9
 // ------------------------------------------------------------------------------------------------------------------------
 
 function ClassCard() {
