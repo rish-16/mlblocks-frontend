@@ -1,5 +1,5 @@
 html, body {
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     padding: 0;
     margin: 0;
 }
@@ -90,7 +90,7 @@ a {
     font-size: 15px;
     font-weight: 600;
     color: rgb(77, 77, 77);
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     background-color: none;
 }
 
@@ -114,7 +114,7 @@ a {
     width: 135px;
     height: 45px;
     border: none;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-weight: 600;
     font-size: 16px;
     color: white;
@@ -198,7 +198,7 @@ a {
     font-size: 15px;
     font-weight: 600;
     color: rgb(77, 77, 77);
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     background-color: none;
 }
 
@@ -222,7 +222,7 @@ a {
     width: 135px;
     height: 45px;
     border: none;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-weight: 600;
     font-size: 16px;
     color: white;
@@ -295,7 +295,7 @@ a {
     width: 150px;
     height: 42px;
     margin: auto 7%;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: bold;
     border: none;
@@ -372,7 +372,7 @@ a {
     width: 75%;
     height: 40px;
     border-bottom: 1px solid rgba(121, 116, 116, 0.75);
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: 500;
     margin-right: 5%;
@@ -386,7 +386,7 @@ a {
     width: 135px;
     height: 42px;
     margin-top: 15px;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: bold;
     border: none;
@@ -489,7 +489,7 @@ a {
 
     width: 150px;
     height: 42px;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: bold;
     border: none;
@@ -757,7 +757,7 @@ a {
     height: 35px;
     background: none;
     border-bottom: 1px solid rgba(65, 105, 225, 0.5);
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 13px;
     color: rgba(57, 58, 59, 0.75);
     text-align: center;
@@ -791,7 +791,7 @@ a {
     color: white;
     font-size: 13px;
     font-weight: bold;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     border-radius: 2px;
     margin: auto 5px;
 }
@@ -808,7 +808,7 @@ a {
     color: white;
     font-size: 15px;
     font-weight: bold;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     border-radius: 2px;
     margin: auto 5px;
 }
@@ -910,7 +910,7 @@ a {
     height: auto;
     background-color: #fff;
     text-align: left;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -1012,7 +1012,7 @@ a {
     padding-bottom: 15px;
     padding-top: 10px;
     user-select: text;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     overflow: scroll;
 }
 
@@ -1098,7 +1098,7 @@ a {
     width: 55%;
     height: 40px;
     border-bottom: 1px solid rgba(121, 116, 116, 0.75);
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: 500;
     margin-right: 10px;
@@ -1107,7 +1107,7 @@ a {
 #sign-up-container #sign-up-container-submit {
     width: 135px;
     height: 42px;
-    font-family: Google Sans;
+    font-family: Raleway, Avenir Next;
     font-size: 15px;
     font-weight: bold;
     border: none;

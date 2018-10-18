@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'email': registerModalEmail.value,
                 'pwd': registerModalPwd.value
             })
-            window.location = 'comingsoon.html'
+            window.location = 'project.html'
         })
     }
 
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         promise.then((user) => {
             console.log(user)
-            window.location = 'comingsoon.html'
+            window.location = 'project.html'
         })
     }
 
