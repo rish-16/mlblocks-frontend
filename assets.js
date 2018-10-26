@@ -63,8 +63,7 @@ ModelCard.prototype.addModel = function(container) {
     cardDisplay.classList = 'model-display'
 
     var cardDisplayP = document.createElement('p')
-    var matches = this.title[0].toUpperCase()
-    cardDisplayP.innerText = matches
+    cardDisplayP.innerHTML = '<i class="far fa-images"></i>'
 
     var cardTitle = document.createElement('p')
     cardTitle.classList += 'model-title'

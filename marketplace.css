@@ -1,0 +1,253 @@
+html, body {
+    font-family: Raleway, Avenir Next;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#home #header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 225px;
+    background-color: white;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+#home #header #search-bar {
+    width: 70%;
+    height: 100%;
+    text-indent: 20px;
+    font-family: Raleway, Avenir Next;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#home #header #search-bar::placeholder {
+    opacity: 1;
+    font-weight: 400;
+    color: rgb(129, 126, 126);
+}
+
+#home #header #user-info {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#home #header #user-info #marketplace {
+    margin: auto 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#home #header #user-info #notifications {
+    margin: auto 0;
+    font-size: 20px;
+    color: rgb(161, 161, 161);
+}
+
+#home #header #user-info #notifications:hover {
+    color: royalblue;
+    transition: 0.5s;
+}
+
+#home #header #user-info #logout-button {
+    width: 95px;
+    height: 35px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Raleway, Avenir Next;
+    border-radius: 100px;
+    margin: auto 0;
+    background-color: royalblue;
+}
+
+#home #header #user-info #logout-button:hover {
+    background-color: royalblue;
+    color: white;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#home #sidebar {
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+    left: 0;
+    width: 225px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 500;
+}
+
+#home #sidebar #logo-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(224, 222, 222, 0.3);
+}
+
+#home #sidebar #logo-box #logo {
+    width: 88px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 5px solid royalblue;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#home #hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url('images/hero_cart.png');
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+}
+
+#home #hero div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#home #hero div #hero-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 7%;
+}
+
+#home #hero div #hero-text #hero-title {
+    font-size: 25px;
+    color: #A7A2A2;
+    font-weight: bold;
+}
+
+#home #hero div #hero-text #hero-title #hero-title-span {
+    color: royalblue;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#home #hero div #hero-text #hero-subtitle {
+    padding-top: 10px;
+    font-size: 18px;
+    color: #A7A2A2;
+}
+
+#home #hero div #hero-text #hero-subtitle p {
+    line-height: 27px;
+}
+
+#home #hero div #hero-text #hero-subtitle #sign-up-form {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    justify-content: space-evenly;
+}
+
+#home #hero div #hero-text #sign-up-area #sign-up-input {
+    margin-top: 10px;
+    width: 75%;
+    height: 40px;
+    border-bottom: 1px solid rgba(121, 116, 116, 0.75);
+    font-family: Raleway, Avenir Next;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 5%;
+    background: none;
+}
+
+#home #hero div #hero-text #sign-up-area #sign-up-input::placeholder {
+    color: #A7A2A2;
+}
+
+#home #hero div #hero-text #sign-up-area #sign-up-button {
+    width: 135px;
+    height: 42px;
+    margin-top: 15px;
+    font-family: Raleway, Avenir Next;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#home #hero div #hero-text #hero-subtitle span {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#home #see-more-button {
+    width: 20px;
+    height: 20px;
+    font-size: 22px;
+    position: absolute;
+    bottom: 30px;
+    color: royalblue;
+    margin: 50px auto;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#market-area {
+    width: 100%;
+    height: auto;
+    background-color: red;
+}
