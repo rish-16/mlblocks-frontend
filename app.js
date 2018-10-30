@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     mixpanel.track('Site visit')
 
     var DBref = firebase.database().ref()
+
+    const header = document.getElementById('header')
     
-    const signInButton = document.getElementById('sign-in-button')
+    const signInButton = document.getElementById('login-button')
     const signUpbutton = document.getElementById('sign-up-button')
-    const signUpInput = document.getElementById('sign-up-input')
 
     const loginModal = document.getElementById('login-box')
     const registerModal = document.getElementById('register-box')
@@ -42,48 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerEmail= document.getElementById('sign-up-container-email')
     const containerSubmit = document.getElementById('sign-up-container-submit')
 
-    const trainingSection = document.getElementById('training-section')
-    const dataCollectionSection = document.getElementById('data-collection-section')
-    const deploymentSection = document.getElementById('deployment-section')
-
     const copybutton = document.getElementById('copy-button')
-
-    const responsiveSignInButton = document.getElementById('responsive-sign-in')
-
-    $.fn.isInViewport = function(el) {
-        var elementTop = $(this).offset().top + 200;
-        var elementBottom = elementTop + $(this).outerHeight() + 200;
-      
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
-      
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-
-    var dataCollectionCard = new ClassDisplay()
-    dataCollectionCard.displayClassCard(dataCollectionSection)
-    dataCollectionCard.typeClassLabel()
-
-    var trainingCard = new DeploymentCard('21 Sept 18', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, 2)
-    trainingCard.addModel(trainingSection)
-    $(window).on('resize scroll', () => {
-        if ($('#training-section').isInViewport()) {
-            trainingCard.trainingInit(true)
-        } else {
-            trainingCard.trainingInit(false)
-        }
-    })
-
-    var deploymentCard = new DeploymentCard('21 Sept 18', 'My Model', 'Classification', 'www.mlblocks.com/XXXXXXXX', 'Inactive', false, 2)
-    deploymentCard.addModel(deploymentSection)
-    deploymentCard.handleDeployment()
-    $(window).on('resize scroll', () => {
-        if ($('#deployment-section').isInViewport()) {
-            deploymentCard.handleDeployment(true)
-        } else {
-            deploymentCard.handleDeployment(false)
-        }
-    })
 
     signUpbutton.onclick = () => {
         if (validateEmail(signUpInput.value)) {
@@ -100,11 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loginModal.style.display = 'block'
     }
 
-    responsiveSignInButton.onclick = () => {
-        mixpanel.track('User sign in clicked')
-        loginModal.style.display = 'block'
-    }
-
     loginRegisterButton.onclick = () => {
         loginModal.style.display = 'none'
         registerModal.style.display = 'block'
@@ -113,6 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
     registerLoginButton.onclick = () => {
         loginModal.style.display = 'block'
         registerModal.style.display = 'none'
+    }
+
+    window.onscroll = (e) => {
+        if ($(window).scrollTop() != 0) {
+            header.style.backgroundColor = 'white'
+            header.style.boxShadow = '2px 2px 10px rgba(0, 0, 0, 0.1)'
+        } else {
+            header.style.background = 'none'
+            header.style.boxShadow = 'none'
+        }
     }
 
     containerSubmit.onclick = () => {
@@ -193,15 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
     typewriter.typeString('Simplified.').start()
-
-    copybutton.onclick = () => {
-        const el = document.createElement('textarea')
-        el.value = "import requests\nimport numpy as np\nfrom PIL import Image\n\nimg = Image.open('my_img.jpg')\n\nurl = 'mlblocks.com/XXXXXXXX/predict'\noptions  = {\n\tdata: img,\n\tapi_key: ACCESS_TOKEN\n}\n\nprediction = requests.get(url, data=options)"
-        document.body.appendChild(el)
-        el.select()
-        document.execCommand('copy')
-        document.body.removeChild(el)
-        var msg = new MessageCard('Copied to clipboard!')
-        msg.addMessage()
-    }
 })
