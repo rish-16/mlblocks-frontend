@@ -43,16 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerEmail= document.getElementById('sign-up-container-email')
     const containerSubmit = document.getElementById('sign-up-container-submit')
 
-    const copybutton = document.getElementById('copy-button')
-
     signUpbutton.onclick = () => {
-        if (validateEmail(signUpInput.value)) {
-            registerModal.style.display = 'block'
-            registerModalEmail.value = signUpInput.value
-        } else {
-            var msg = new MessageCard("Oops! That doesn't look like an email...")
-            msg.addMessage()
-        }
+        registerModal.style.display = 'block'
     }
 
     signInButton.onclick = () => {
