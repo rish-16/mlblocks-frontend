@@ -75,54 +75,36 @@
             </div>
         </div>
 
-        <div id="home">
-            <div id="header">
-                <p id="logo">mlblocks</p>
-                <button id="sign-in-button">Sign In</button>
+        <header id="header">
+            <div id="logo-header">
+                <img src="images/icon.png" id="logo-image">
+                <p id="logo-text">mlblocks</p>
             </div>
+            <button id="login-button">Sign In</button>
+        </header>
 
-            <div id="responsive-header">
-                <div id="responsive-display" style="width: 100%;height: 100%;display: flex;flex-direction: row;justify-content: space-between;">
-                    <div style="display: flex; flex-direction: row;">
-                        <!-- <i class="fas fa-bars" id="menu-bar"></i> -->
-                        <p style="margin-left: 20px;" id="logo">mlblocks</p>
-                    </div>
-    
-                    <div id="right">
-                        <input type="button" value="Sign In" id="responsive-sign-in">
-                    </div>
-                </div>
-                    
-                <div id="menu-options">
-                    <p class="home-tab">Home</p>
-                    <p class="overview-tab">About</p>
-                </div>
-            </div>
+        <div id="hero">
+            <div id="hero-container">
+                <p id="hero-title">
+                    Machine Learning.
+                    <br>
+                    <span id="hero-title-span">Simplified.</span>
+                </p>
 
-            <div id="hero">
-                <div>
-                    <div id="hero-text">
-                        <p id="hero-title">Machine Learning.<br><span id="hero-title-span"></span></p>
-                        <div id="hero-subtitle">
-                            <p>
-                                Create, train and deploy Machine Learning models.
-                                <br>
-                                Without expensive hardware.
-                            </p>
-                            <br>
-                        </div>
-                        <div id="sign-up-area">
-                            <input type="email" placeholder="Your email" id="sign-up-input">
-                            <button id="sign-up-button">Get Started</button>
-                        </div>
-                    </div>
+                <p id="hero-subtitle">
+                    Create, train and deploy Machine Learning models.
+                    <br>
+                    On the Cloud. Without expensive hardware.
+                </p>
+
+                <div id="hero-buttons">
+                    <button id="sign-up-button">SIGN UP FOR FREE <i class="fas fa-chevron-right" style="font-size:12px;padding-left: 10px;"></i></button>
+                    <button id="demo-button">SCHEDULE DEMO <i class="fas fa-play" style="font-size:12px;padding-left: 10px;"></i></button>
                 </div>
             </div>
-
-            <!-- <i id="see-more-button" class="fas fa-chevron-down"></i> -->
         </div>
 
-        <div id="info">
+        <!-- <div id="info">
             <p id="info-title">
                 Train and deploy Machine Learning models on the cloud. 
                 <br>
@@ -137,127 +119,73 @@
                 <br>
                 <p><i class="far fa-circle"></i> Enjoy an entire suite of AI tools at your fingertips with a <b style="color:black;">RESTful API</b></p>
             </div>
-        </div>
+        </div> -->
+
+        <!-- <div id="TIO">
+            <div id="editor">
+
+            </div>
+
+            <div id="results">
+
+            </div>
+        </div> -->
 
         <div id="about">
-            
-            <p id="about-content">
-                Here's how it works
-            </p>
+            <p id="div-title">Harness the power of AI</p>
+            <p id="div-subtitle">Here's what happens</p>
+            <section class="container" id="create-models">
+                <div class="cont-text">
+                    <p class="section-title">Effortlessly Create Models!</p>
+                    <p class="section-desc">
+                        Simply drag your training data into your dashboard to being training. 
+                        All you need is 50 instances per class!
+                    </p>
+                </div>
+                <div class="cont-image">
 
-            <div class="about-section" id="data-collection">
-                <div class="about-section-right" id="data-collection-section" style="zoom: 1.2;">
+                </div>
+            </section>
+
+            <section class="container" id="train-models">
+                <div class="cont-image">
                     
                 </div>
-
-                <div class="about-section-left">
-                    <p class="about-section-title">
-                        1. Upload Data
-                    </p>
-                    <p class="about-section-content">
-                        Mlblocks allows you to create machine learning models with <b>only 50 images</b> per class. Collect your data and upload it in a click
+                <div class="cont-text">
+                    <p class="section-title">High-performace Training.</p>
+                    <p class="section-desc">
+                        Train your models on optimised hardware in the cloud without touching a single line of code.
                     </p>
                 </div>
-            </div>
+            </section>
 
-            <div id="about-arrow"></div>
-
-            <div class="about-section" id="training-model">
-                <div class="about-section-left">
-                    <p class="about-section-title">
-                        2. Train Model
-                    </p>
-                    <p class="about-section-content">
-                        After you upload your data, we handle the rest! We'll train the model on our servers and get it back to you ASAP.
+            <section class="container" id="create-models">
+                <div class="cont-text">
+                    <p class="section-title">Deployment at your fingertips.</p>
+                    <p class="section-desc">
+                        Serve and use your models in your apps and projects with a single click of a button.
                     </p>
                 </div>
+                <div class="cont-image">
 
-                <div class="about-section-right" id="training-section">
-                    
                 </div>
-            </div>
+            </section>
 
-            <div id="about-arrow"></div>
+            <section class="container" id="create-models">
+                <div class="cont-image">
 
-            <div class="about-section" id="model-deployment">
-                <div class="about-section-right" id="deployment-section">
-                    
                 </div>
-
-                <div class="about-section-left">
-                    <p class="about-section-title">
-                        3. Deploy In A Click
-                    </p>
-                    <p class="about-section-content">
-                        Deploy and serve your models from the cloud without touching a single line of code!
+                <div class="cont-text">
+                    <p class="section-title">Integration. Without the fuss.</p>
+                    <p class="section-desc">
+                        Integrate your deployed models with a simple API request in few lines of code. 
                     </p>
                 </div>
-            </div>
-
-            <div id="about-arrow"></div>
-
-            <div class="about-section" id="model-integration">
-                <div class="about-section-left">
-                    <p class="about-section-title">
-                        4. Seamless integration
-                    </p>
-                    <p class="about-section-content">
-                        Easily integrate your trained models using a REST URL for instantaneous predictions!
-                        <br>
-                        <br>
-                        With a simple HTTP request, have an entire Machine Learning suite of tools at the tips of your fingers!
-                    </p>
-                </div>
-
-                <div class="about-section-right" id="integration-section">
-                    <div id="sandbox">
-                        <div id="editor">
-                            <i title="Copy" id="copy-button" class="far fa-copy"></i>
-
-                            <p id="code">
-                                <span class="ce-keyword">import</span> requests
-                                <br>
-                                <span class="ce-keyword">from</span> PIL <span class="ce-keyword">import</span> Image
-                                <br>
-                                <br>
-                                img = Image.<span class="ce-function">open</span>(<span class="ce-string">'my_img.jpg'</span>)
-                                <br>
-                                <br>
-                                url = <span class="ce-string">'mlblocks.com/XXXXXXXX/predict'</span>
-                                <br>
-                                options  = {
-                                    <br>
-                                    <span class="ce-indent"><span class="ce-key">data:</span> <span class="ce-value">img</span></span>,
-                                    <br>
-                                    <span class="ce-indent"><span class="ce-key">api_key:</span> <span class="ce-value">ACCESS_TOKEN</span></span>
-                                    <br>
-                                }
-                                <br>
-                                <br>
-                                prediction = requests.<span class="ce-function">get</span>(url, <span class="ce-param">data=</span> <span class="ce-string">options</span>)
-                            </p>
-                        </div>
-
-                        <div id="output">
-                            <p>
-                                {
-                                    <br>
-                                    <span class="ce-indent"><span class="ce-key">label:</span> </span> <span class="ce-value">'Dog'</span>,
-                                    <br>
-                                    <span class="ce-indent"><span class="ce-key">confidence:</span> </span> <span class="ce-value">98.582</span>
-                                    <br>
-                                }
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
 
-        <div id="about-arrow"></div>
-
         <div id="contact">
-            <p id="contact-title">Integrate Machine Learning in your apps today!</p>
+            <p id="contact-title">Integrate Machine Learning in your apps with ease!</p>
             <p id="contact-subtitle">Sign up today!</p>
 
             <div id="sign-up-container">
@@ -276,3 +204,50 @@
 
     </body>
 </html>
+
+
+
+
+
+
+
+    <!-- <div id="sandbox">
+        <div id="editor">
+            <i title="Copy" id="copy-button" class="far fa-copy"></i>
+
+            <p id="code">
+                <span class="ce-keyword">import</span> requests
+                <br>
+                <span class="ce-keyword">from</span> PIL <span class="ce-keyword">import</span> Image
+                <br>
+                <br>
+                img = Image.<span class="ce-function">open</span>(<span class="ce-string">'my_img.jpg'</span>)
+                <br>
+                <br>
+                url = <span class="ce-string">'mlblocks.com/XXXXXXXX/predict'</span>
+                <br>
+                options  = {
+                    <br>
+                    <span class="ce-indent"><span class="ce-key">data:</span> <span class="ce-value">img</span></span>,
+                    <br>
+                    <span class="ce-indent"><span class="ce-key">api_key:</span> <span class="ce-value">ACCESS_TOKEN</span></span>
+                    <br>
+                }
+                <br>
+                <br>
+                prediction = requests.<span class="ce-function">get</span>(url, <span class="ce-param">data=</span> <span class="ce-string">options</span>)
+            </p>
+        </div>
+
+        <div id="output">
+            <p>
+                {
+                    <br>
+                    <span class="ce-indent"><span class="ce-key">label:</span> </span> <span class="ce-value">'Dog'</span>,
+                    <br>
+                    <span class="ce-indent"><span class="ce-key">confidence:</span> </span> <span class="ce-value">98.582</span>
+                    <br>
+                }
+            </p>
+        </div>
+    </div> -->
