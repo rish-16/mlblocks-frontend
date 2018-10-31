@@ -406,7 +406,7 @@ a {
 }
 
 #about #about-title {
-    width: 50%;
+    width: 65%;
     margin: 0 auto;
     font-size: 20px;
     line-height: 50px;
@@ -476,7 +476,7 @@ a {
 }
 
 .section-desc {
-    width: 100%;
+    width: 90%;
     font-size: 19px;
     color: #8f9194;
     padding: 10px 0;
@@ -885,6 +885,10 @@ a {
         font-size: 15px;
     }
 
+    #about #about-title {
+        width: 90%;
+    }
+
     #HIW {
         width: 100%;
         display: block;
@@ -907,6 +911,7 @@ a {
 
     .section-desc {
         font-size: 17px;
+        margin: 0 auto;
     }
 
     .cont-image {
@@ -936,54 +941,6 @@ a {
     #footer-social {
         width: 100px;
         margin: 15px auto 0 auto;
-    }
-
-    .about-section .about-section-left {
-        width: 90%;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .about-section {
-        width: 80%;
-        height: auto;
-        margin: 50px auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .about-section .about-section-right {
-        position: relative;
-        min-width: 15%;
-        width: 100%;
-        text-align: left;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .about-section .about-section-left {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .about-section .about-section-left .about-section-title {
-        width: 100%;
-        text-align: center;
-    }
-
-    .about-section .about-section-left .about-section-content {
-        width: 100%;
-        text-align: center;
     }
 }
 
