@@ -1,0 +1,234 @@
+html, body {
+    height: 100%;
+    font-family: Raleway, Avenir Next;
+    padding: 0;
+    margin: 0;
+}
+
+p, button {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#left #login-container {
+    width: 65%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#left #logo-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#left #logo-header #logo-text {
+    height: 25px;
+    font-size: 20px;
+    border-bottom: 5px solid royalblue;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#left #login-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px 0;
+}
+
+#left #name {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-indent: 15px;
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    background: white;
+    font-family: Raleway, Avenir Next;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+#left #name::placeholder {
+    opacity: 1;
+    color: rgb(173, 173, 173);
+}
+
+#left #email {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-indent: 15px;
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    background: white;
+    font-family: Raleway, Avenir Next;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+#left #email::placeholder {
+    opacity: 1;
+    color: rgb(173, 173, 173);
+}
+
+#left #password {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-indent: 15px;
+    width: 90%;
+    height: 50px;
+    background-color: white;
+    background: white;
+    font-family: Raleway, Avenir Next;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+#left #password::placeholder {
+    opacity: 1;
+    color: rgb(173, 173, 173);
+}
+
+#left #register-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 275px;
+    margin: 0 auto;
+}
+
+#left #register-buttons #submit {
+    width: 125px;
+    height: 50px;
+    background-color: royalblue;
+    color: white;
+    font-family: Raleway, Avenir Next;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: auto 0;
+}
+
+#left #register-buttons #submit:hover {
+    cursor: pointer;
+}
+
+#left #register-buttons #register-button {
+    font-size: 15px;
+    text-decoration: underline;
+    color: rgb(139, 138, 138);
+    margin: auto 0;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right #right-image {
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#footer {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#footer p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#footer p span {
+    margin: 0 7px;
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 75px; */
+    padding: 2px 0;
+    border-bottom: 3px solid royalblue;   
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 935px) {
+    #right {
+        display: none;
+    }
+
+    #left {
+        width: 100%;
+        background-image: linear-gradient(to top, rgba(65, 105, 225, 0.5), white, white);
+    }
+
+    #left #login-title {
+        font-size: 20px;
+    }
+
+    #left #login-container {
+        width: 85%;
+    }
+
+    #left #name, #left #email, #left #password {
+        width: 90%;
+    }
+}
