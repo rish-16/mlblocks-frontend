@@ -329,7 +329,7 @@ a {
 #hero #hero-container #hero-title {
     font-weight: bold;
     font-size: 32px;
-    color: #737577;
+    color: #888a8b;
     /* color: white; */
     margin-bottom: 15px;
 }
@@ -672,6 +672,7 @@ a {
     width: 100%;
     height: 52%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .uc-card .uc-project-title {
@@ -704,6 +705,12 @@ a {
     color: #737577;
     padding: 30px;
     text-decoration: underline;
+}
+
+#im .uc-data img {
+    position: relative;
+    width: 100%;
+    /* background-image: url('images/grid1.png') */
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
