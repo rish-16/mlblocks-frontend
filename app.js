@@ -5,17 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header')
     
     const signInButton = document.getElementById('login-button')
-    const signUpbutton = document.getElementById('sign-up-button')
+    const signUpButton = document.getElementById('sign-up-button')
+    const demoButton = document.getElementById('demo-button')
+
+    const contactSignUpbutton = document.getElementById('contact-sign-up-button')
+    const contactDemoButton = document.getElementById('contact-demo-button')
 
     const heroTitleSpan = document.getElementById('hero-title-span')
-
-    const marketLink = document.getElementById('marketplace-link')
 
     signInButton.onclick = () => {
         window.location = 'login.html'
     }
 
-    signUpbutton.onclick = () => {
+    signUpButton.onclick = () => {
+        window.location = 'register.html'
+    }
+
+    contactSignUpbutton.onclick = () => {
+        window.location = 'register.html'
+    }
+
+    contactDemoButton.onclick = () => {
         window.location = 'register.html'
     }
 
@@ -27,11 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.background = 'none'
             header.style.boxShadow = 'none'
         }
-    }
-
-    marketLink.onclick = () => {
-        console.log('click')
-        registerModal.style.direction = 'block'
     }
 
     function validateEmail(email) {

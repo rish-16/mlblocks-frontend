@@ -128,7 +128,7 @@ a {
     color: #515355;
 }
 
-#sign-up-button {
+#hero-buttons #sign-up-button {
     width: auto;
     height: 50px;
     background-color: royalblue;
@@ -143,7 +143,7 @@ a {
     padding: 0 15px;
 }
 
-#demo-button {
+#hero-buttons #demo-button {
     width: auto;
     height: 50px;
     background-color: #fafafa;
@@ -204,7 +204,7 @@ a {
 /* -------------------------------------------------------------------------------------------------------------- */
 
 #HIW {
-    width: 80%;
+    width: 70%;
     height: auto;
     margin: 50px auto;
 }
@@ -233,7 +233,15 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 50px 0;
+    margin: 100px auto;
+}
+
+#create-models {
+    margin-top: 30px;
+}
+
+#integrate-models {
+    margin-bottom: 30px;
 }
 
 .cont-text {
@@ -244,13 +252,18 @@ a {
 }
 
 .cont-image {
-    width: 100px;
-    /* height: 10px; */
+    width: auto;
+    height: auto;
+    margin: auto 0;
+}
+
+.cont-image img {
+    width: 200px;
     margin: auto 0;
 }
 
 .section-title {
-    font-size: 27px;
+    font-size: 25px;
     font-weight: bold;
     color: royalblue;
     padding: 10px 0;
@@ -258,7 +271,7 @@ a {
 
 .section-desc {
     width: 90%;
-    font-size: 19px;
+    font-size: 18px;
     color: #8f9194;
     padding: 10px 0;
 }
@@ -534,37 +547,43 @@ a {
     font-size: 17px;
 }
 
-#sign-up-container {
-    width: 65%;
+#contact-buttons {
+    width: 40%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px auto;
 }
 
-#sign-up-container #sign-up-container-email {
-    width: 55%;
-    height: 40px;
-    border-bottom: 1px solid rgba(121, 116, 116, 0.75);
-    font-family: Raleway, Avenir Next;
-    font-size: 15px;
-    font-weight: 500;
-    margin-right: 10px;
-}
-
-#sign-up-container #sign-up-container-submit {
-    width: 135px;
-    height: 42px;
-    font-family: Raleway, Avenir Next;
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 100px;
+#contact-buttons #contact-sign-up-button {
+    flex-shrink: 1;
+    width: auto;
+    height: 50px;
     background-color: royalblue;
     color: white;
-    cursor: pointer;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    font-family: Raleway, Avenir Next;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+#contact-buttons #contact-demo-button {
+    width: auto;
+    height: 50px;
+    background-color: #fafafa;
+    flex-shrink: 1;
+    color: royalblue;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    font-family: Raleway, Avenir Next; 
+    padding: 0 15px;
+    margin: 10px 0;
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
@@ -698,22 +717,25 @@ a {
     }
 
     .container {
-        display: block;
-        margin: 75px auto;
+        display: flex;
+        justify-content: center;
+        margin: 100px auto;
     }
 
     .cont-text {
-        width: 80%;
+        width: 85%;
         margin: 0 auto;
         text-align: center;
     }
 
     .section-title {
-        font-size: 22px;
+        font-size: 20px;
+        text-align: center;
     }
 
     .section-desc {
-        font-size: 17px;
+        text-align: center;
+        font-size: 16px;
         margin: 0 auto;
     }
 
@@ -721,17 +743,12 @@ a {
         margin: 0 auto;
     }
 
-    #sign-up-container {
-        width: 95%;
+    .cont-image img {
+        margin: 0 auto;
     }
 
-    #sign-up-container-email {
-        width: 75%;
-        margin: 10px 0;
-    }
-
-    #sign-up-container-submit {
-        margin: 10px 0;
+    #contact-buttons {
+        width: 55%;
     }
 
     #footer {
