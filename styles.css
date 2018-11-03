@@ -590,6 +590,12 @@ a {
     margin: 10px 0;
 }
 
+#contact-demo-button:hover, #contact-sign-up-button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 /* -------------------------------------------------------------------------------------------------------------- */
 
 .message-card {
