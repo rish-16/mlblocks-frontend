@@ -113,7 +113,7 @@ a {
 #hero #hero-container #hero-title {
     font-weight: bold;
     font-size: 32px;
-    color: #888a8b;
+    color: #8395a7;
     /* color: white; */
     margin-bottom: 15px;
 }
@@ -206,7 +206,7 @@ a {
 }
 
 #about #about-right img {
-    width: 200px;
+    width: 235px;
     margin: auto 0;
 }
 
@@ -719,7 +719,7 @@ a {
     font-size: 16px;
     font-weight: bold;
     padding: 2px 0;
-    border-bottom: 3px solid royalblue;
+    border-bottom: 4px solid royalblue;
 }
 
 /* -------------------------------------------------------------------------------------------------------------- */
@@ -810,6 +810,10 @@ a {
 
     #about #about-right {
         display: none;
+    }
+
+    #div-title {
+        font-size: 25px;
     }
 
     #about #about-left #about-text #about-title {
