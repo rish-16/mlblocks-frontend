@@ -99,7 +99,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom, rgba(65, 105, 225, 0.32), white);     
+    background-color: white;
 }
 
 #hero #hero-container {
