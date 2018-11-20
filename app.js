@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const signInButton = document.getElementById('login-button')
     const signUpButton = document.getElementById('sign-up-button')
-    const demoButton = document.getElementById('demo-button')
 
     const contactSignUpbutton = document.getElementById('contact-sign-up-button')
-    const contactDemoButton = document.getElementById('contact-demo-button')
 
     const heroTitleSpan = document.getElementById('hero-title-span')
 
@@ -22,10 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     contactSignUpbutton.onclick = () => {
-        window.location = 'register.html'
-    }
-
-    contactDemoButton.onclick = () => {
         window.location = 'register.html'
     }
 

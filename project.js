@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createModelButton.onclick = () => {
         mixpanel.track('Creating model')
         newProjectModal.style.display = 'block'
-        saveProjectButton.disabled = false
+        // saveProjectButton.disabled = false
     }
 
     imageBlock.onclick = () => {
@@ -190,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mixpanel.track('Model saved')
         // Check if all information has been updated
         if (newProjectTitle.value.length > 1 && dataBlockChosen != null && classObjects.length > 0) {
-            saveProjectButton.disabled = true
             var ID = makeURL()
             var status = 'Inactive'
             var trained = false
@@ -227,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
             msg.addMessage()
         } else {
             var msg = new MessageCard('Please fill in the relevant project details.')
-            saveProjectButton.disabled = false
             msg.addMessage()
         }
     }

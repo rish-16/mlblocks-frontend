@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Name': name.value,
                 'Email': email.value
             })
-            window.location = 'project.html'
+            window.location = 'comingsoon.html'
         })
         .catch((err) => {
             console.log(err.message)

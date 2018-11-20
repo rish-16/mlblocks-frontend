@@ -62,8 +62,14 @@ ModelCard.prototype.addModel = function(container) {
     var cardDisplay = document.createElement('div')
     cardDisplay.classList = 'model-display'
 
-    var cardDisplayP = document.createElement('p')
-    cardDisplayP.innerHTML = '<i class="far fa-images"></i>'
+    // var cardDisplayP = document.createElement('p')
+    // cardDisplayP.innerHTML = '<i class="far fa-images"></i>'
+
+    var trainingLoader = document.createElement('div')
+    trainingLoader.classList += 'model-training-loader'
+
+    var trainingLoaderBar = document.createElement('div')
+    trainingLoaderBar.classList += 'model-training-loader-bar'
 
     var cardTitle = document.createElement('p')
     cardTitle.classList += 'model-title'
@@ -122,17 +128,34 @@ ModelCard.prototype.addModel = function(container) {
     cardTop.appendChild(options)
     this.card.appendChild(cardTop)
 
-    cardDisplay.appendChild(cardDisplayP)
-    this.card.appendChild(cardDisplay)
+    // cardDisplay.appendChild(cardDisplayP)
+    // this.card.appendChild(cardDisplay)
 
     this.card.appendChild(cardTitle)
     this.card.appendChild(cardClasses)
     this.card.appendChild(statusNode)
 
+    trainingLoader.appendChild(trainingLoaderBar)
+    this.card.appendChild(trainingLoader)
+
     this.card.appendChild(cardDivider)
     this.card.appendChild(cardType)
 
     container.prepend(this.card)
+}
+
+ModelCard.prototype.updateLoadingBar = function() {
+    var elem = document.getElementsByClassName("")[0]; 
+    var width = 1;
+    var id = setInterval(frame, 20);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
 }
 
 ModelCard.prototype.handleDeployment = function() {
@@ -180,24 +203,25 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     }
     if (task) {
 
-        var http = new XMLHttpRequest()
-        var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
+        // var http = new XMLHttpRequest()
+        // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
+        // var url = 'http://10.180.9.33:5000' + this.pID + '/delete'
 
-        http.open('POST', url, true)
+        // http.open('POST', url, true)
 
         // Send the proper header information along with the request
         //http.setRequestHeader('Content-type', 'multipart/form-data')
-        var formData = new FormData();
-        formData.append("userID", this.uID);
+        // var formData = new FormData();
+        // formData.append("userID", this.uID);
 
-        http.onreadystatechange = function() {
-            // Call a function when the state changes
-            if (http.readyState == 4 && http.status == 200) {
-                window.alert(http.responseText)
-            }
-        }
+        // http.onreadystatechange = function() {
+        //     // Call a function when the state changes
+        //     if (http.readyState == 4 && http.status == 200) {
+        //         window.alert(http.responseText)
+        //     }
+        // }
 
-        http.send(formData)
+        // http.send(formData)
 
         mixpanel.track('Model deleted')
 
@@ -392,24 +416,25 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     }
     if (task) {
 
-        var http = new XMLHttpRequest()
-        var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
+        // var http = new XMLHttpRequest()
+        // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
+        // // var url = 'http://10.180.9.33:5000' + this.pID + '/delete'
 
-        http.open('POST', url, true)
+        // http.open('POST', url, true)
 
-        // Send the proper header information along with the request
-        //http.setRequestHeader('Content-type', 'multipart/form-data')
-        var formData = new FormData();
-        formData.append("userID", this.uID);
+        // // Send the proper header information along with the request
+        // //http.setRequestHeader('Content-type', 'multipart/form-data')
+        // var formData = new FormData();
+        // formData.append("userID", this.uID);
 
-        http.onreadystatechange = function() {
-            // Call a function when the state changes
-            if (http.readyState == 4 && http.status == 200) {
-                window.alert(http.responseText)
-            }
-        }
+        // http.onreadystatechange = function() {
+        //     // Call a function when the state changes
+        //     if (http.readyState == 4 && http.status == 200) {
+        //         window.alert(http.responseText)
+        //     }
+        // }
 
-        http.send(formData)
+        // http.send(formData)
 
 
         // Delete from Database
@@ -547,24 +572,25 @@ Project.prototype.handleUpload = function() {
     const DBref = firebase.database().ref()
     const STref = firebase.storage().ref()
 
-    var http = new XMLHttpRequest()
-    var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
+    // var http = new XMLHttpRequest()
+    // // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
+    // var url = 'http://10.180.9.33:5000' + this.pID + '/delete'
 
-    http.open('POST', url, true)
+    // http.open('POST', url, true)
 
-    // Send the proper header information along with the request
-    //http.setRequestHeader('Content-type', 'multipart/form-data')
-    var formData = new FormData();
-    formData.append("userID", this.projectUser);
+    // // Send the proper header information along with the request
+    // //http.setRequestHeader('Content-type', 'multipart/form-data')
+    // var formData = new FormData();
+    // formData.append("userID", this.projectUser);
 
-    http.onreadystatechange = function() {
-        // Call a function when the state changes
-        if (http.readyState == 4 && http.status == 200) {
-            window.alert(http.responseText)
-        }
-    }
+    // http.onreadystatechange = function() {
+    //     // Call a function when the state changes
+    //     if (http.readyState == 4 && http.status == 200) {
+    //         window.alert(http.responseText)
+    //     }
+    // }
 
-    http.send(formData)
+    // http.send(formData)
 
     mixpanel.track('Project created')
 
@@ -596,6 +622,8 @@ Project.prototype.handleUpload = function() {
     }
 
     console.log('Project Sent')
+    var msg = new MessageCard('Data successfully saved!')
+    msg.addMessage()
 }
 
 var getCreationDate = function() {
