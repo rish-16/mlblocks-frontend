@@ -32,7 +32,7 @@ def get_project_id():
 def newProject(user, projectID, title, classes):
     msg = colored(title, "cyan")
     print ('\nCreating new project {}'.format(msg))
-    projectID = get_project_id()
+#    projectID = get_project_id()
     date = str(datetime.datetime.today().strftime('%d-%m-%Y'))
     data = {
         'DATATYPE': 'Images',
