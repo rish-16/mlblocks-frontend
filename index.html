@@ -1,167 +1,348 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>mlblocks | Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>mlblocks | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon">
-        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-        <link rel="manifest" href="favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="favicon/apple-icon-152x152.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
-        <!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
-        0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-        for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
-        mixpanel.init("8f012fe0deb31a520d3b158421e4b8d9");</script><!-- end Mixpanel -->
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+      (function(e, a) {
+        if (!a.__SV) {
+          var b = window;
+          try {
+            var c,
+              l,
+              i,
+              j = b.location,
+              g = j.hash;
+            c = function(a, b) {
+              return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null;
+            };
+            g &&
+              c(g, "state") &&
+              ((i = JSON.parse(decodeURIComponent(c(g, "state")))),
+              "mpeditor" === i.action &&
+                (b.sessionStorage.setItem("_mpcehash", g),
+                history.replaceState(
+                  i.desiredHash || "",
+                  e.title,
+                  j.pathname + j.search
+                )));
+          } catch (m) {}
+          var k, h;
+          window.mixpanel = a;
+          a._i = [];
+          a.init = function(b, c, f) {
+            function e(b, a) {
+              var c = a.split(".");
+              2 == c.length && ((b = b[c[0]]), (a = c[1]));
+              b[a] = function() {
+                b.push([a].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var d = a;
+            "undefined" !== typeof f ? (d = a[f] = []) : (f = "mixpanel");
+            d.people = d.people || [];
+            d.toString = function(b) {
+              var a = "mixpanel";
+              "mixpanel" !== f && (a += "." + f);
+              b || (a += " (stub)");
+              return a;
+            };
+            d.people.toString = function() {
+              return d.toString(1) + ".people (stub)";
+            };
+            k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(
+              " "
+            );
+            for (h = 0; h < k.length; h++) e(d, k[h]);
+            a._i.push([b, c, f]);
+          };
+          a.__SV = 1.2;
+          b = e.createElement("script");
+          b.type = "text/javascript";
+          b.async = !0;
+          b.src =
+            "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+              ? MIXPANEL_CUSTOM_LIB_URL
+              : "file:" === e.location.protocol &&
+                "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+              ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"
+              : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";
+          c = e.getElementsByTagName("script")[0];
+          c.parentNode.insertBefore(b, c);
+        }
+      })(document, window.mixpanel || []);
+      mixpanel.init("8f012fe0deb31a520d3b158421e4b8d9");
+    </script>
+    <!-- end Mixpanel -->
 
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:500,600,700,800" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:500,600,700,800"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <script src="params.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script src="params.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 
-        <script src="assets.js"></script>
-        <script src="app.js"></script>
-    </head>
+    <script src="assets.js"></script>
+    <script src="app.js"></script>
+  </head>
 
-    <body>
+  <body>
+    <header id="header">
+      <div id="logo-header">
+        <p id="logo-text">mlblocks</p>
+      </div>
+      <div id="navbar">
+        <p id="about">About</p>
+        <button id="login-button">Sign In</button>
+      </div>
+    </header>
 
-        <header id="header">
-            <div id="logo-header">
-                <p id="logo-text">mlblocks</p>
-            </div>
-            <button id="login-button">Sign In</button>
-        </header>
+    <div id="hero">
+      <div id="hero-container">
+        <p id="hero-title">
+          Machine Learning.
+          <br />
+          <span id="hero-title-span"></span>
+        </p>
 
-        <div id="hero">
-            <div id="hero-container">
-                <p id="hero-title">
-                    Machine Learning.
-                    <br>
-                    <span id="hero-title-span"></span>
-                </p>
+        <p id="hero-subtitle">
+          Create, train and deploy Machine Learning models.
+          <br />
+          Without expensive hardware. No code required.
+        </p>
 
-                <p id="hero-subtitle">
-                    Create, train and deploy Machine Learning models.
-                    <br>
-                    Without expensive hardware. No code required.
-                </p>
+        <div id="hero-buttons">
+          <button id="sign-up-button">
+            SIGN UP FOR BETA
+            <i
+              class="fas fa-chevron-right"
+              style="font-size:12px;padding-left: 10px;"
+            ></i>
+          </button>
 
-                <div id="hero-buttons">
-                    <button id="sign-up-button">SIGN UP FOR BETA <i class="fas fa-chevron-right" style="font-size:12px;padding-left: 10px;"></i></button>
-                    <!-- <button id="demo-button">SCHEDULE DEMO <i class="fas fa-play" style="font-size:12px;padding-left: 10px;"></i></button> -->
-                </div>
-            </div>
+          <a
+            id="badge1"
+            href="https://www.producthunt.com/posts/mlblocks?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mlblocks"
+            target="_blank"
+            style="margin-top: 19px;"
+            ><img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=137015&theme=dark"
+              alt="mlblocks - A no-code Machine Learning solution. Made by teenagers. | Product Hunt Embed"
+              style="width: 230px; height: 52px;"
+              width="250px"
+              height="54px"
+          /></a>
+          <!-- <button id="demo-button">SCHEDULE DEMO <i class="fas fa-play" style="font-size:12px;padding-left: 10px;"></i></button> -->
         </div>
+      </div>
+    </div>
 
-        <div id="about">
-            <div id="about-left">
-                <div id="about-text">
-                    <p id="about-title">
-                        Create. Train. Deploy.
-                    </p>
-                    <p id="about-desc">
-                        MLBlocks does the heavy lifting and connects the dots for you. 
-                        Create a model, train on custom datasets, deploy it in the cloud and monitor it without having a Machine Learning background.
-                        <br>
-                        Machine Learning doesn't need to be that difficult!
-                    </p>
-                </div>
-            </div>
-            <div id="about-right">
-                <img src="images/server.png">
-            </div>
+    <div id="about">
+      <div id="about-left">
+        <div id="about-text">
+          <p id="about-title">
+            Create. Train. Deploy.
+          </p>
+          <p id="about-desc">
+            MLBlocks does the heavy lifting and connects the dots for you.
+            Create a model, train on custom datasets, deploy it in the cloud and
+            monitor it without having a Machine Learning background.
+            <br />
+            Machine Learning doesn't need to be that difficult!
+          </p>
         </div>
+      </div>
+      <div id="about-right">
+        <img src="images/server.png" />
+      </div>
+    </div>
 
-        <div id="HIW">
-            <p id="div-title">Harness the power of AI</p>
-            <p id="div-subtitle">Here's how it works</p>
-            <section class="container" id="create-models">
-                <div class="cont-text">
-                    <p class="section-title">Effortlessly Create Models</p>
-                    <p class="section-desc">
-                        Simply drag your training data into your dashboard to begin training your models without knowing any Machine Learning!
-                        
-                    </p>
-                </div>
-                <div class="cont-image">
-                    <img src="images/create.png" alt="create">
-                </div>
-            </section>
-
-            <section class="container" id="train-models">
-                <div class="cont-image">
-                    <img src="images/hardware.jpg" alt="hardware">
-                </div>
-                <div class="cont-text">
-                    <p class="section-title">High-performace Training</p>
-                    <p class="section-desc">
-                        Train your models on optimised hardware in the cloud without worrying about expenses.
-                    </p>
-                </div>
-            </section>
-
-            <section class="container" id="deploy-models">
-                <div class="cont-text">
-                    <p class="section-title">Deployment at your Fingertips</p>
-                    <p class="section-desc">
-                        Serve your models from the cloud with a single click of a button. No server configuration needed.
-                    </p>
-                </div>
-                <div class="cont-image">
-                    <img src="images/deploy.png" alt="deploy">
-                </div>
-            </section>
-
-            <section class="container" id="integrate-models">
-                <div class="cont-image">
-                    <img src="images/integrate.png" alt="integrate">
-                </div>
-                <div class="cont-text">
-                    <p class="section-title">Integration - without the fuss</p>
-                    <p class="section-desc">
-                        Serve your cloud-hosted models using the simple MLBlocks API in a language of your choice.
-                    </p>
-                </div>
-            </section>
+    <div id="HIW">
+      <p id="div-title">Harness the power of AI</p>
+      <p id="div-subtitle">Here's how it works</p>
+      <section class="container" id="create-models">
+        <div class="cont-text">
+          <p class="section-title">Effortlessly Create Models</p>
+          <p class="section-desc">
+            Simply drag your training data into your dashboard to begin training
+            your models without knowing any Machine Learning!
+          </p>
         </div>
-
-        <div id="contact">
-            <p id="contact-title">Integrate Machine Learning in your apps with ease!</p>
-            <p id="contact-subtitle">Sign up today!</p>
- 
-            <div id="contact-buttons">
-                <button id="contact-sign-up-button">SIGN UP FOR BETA <i class="fas fa-chevron-right" style="font-size:12px;padding-left: 10px;"></i></button>
-                <!-- <button id="contact-demo-button">SCHEDULE DEMO <i class="fas fa-play" style="font-size:12px;padding-left: 10px;"></i></button> -->
-            </div>
+        <div class="cont-image">
+          <img src="images/create.png" alt="create" />
         </div>
-        
-        <div id="footer">
-            <div id="footer-social">
-                <a href="https://twitter.com/mlblocksHQ" target="blank_"><i class="fab fa-twitter"></i></a>
-                <a href="https://medium.com/sigmoid" target="blank_"><i class="fab fa-medium-m"></i></a>
-            </div>
-            <p><i style="color: #ebb339;padding: 0 5px;font-size: 15px;" class="fas fa-code"></i> with <i style="color: #ff6b6b; padding: 0 5px;font-size: 15px;" class="fas fa-heart"></i> by <span>mlblocks</span> &copy; 2018</p>
-        </div>
+      </section>
 
-    </body>
+      <section class="container" id="train-models">
+        <div class="cont-image">
+          <img src="images/hardware.jpg" alt="hardware" />
+        </div>
+        <div class="cont-text">
+          <p class="section-title">High-performace Training</p>
+          <p class="section-desc">
+            Train your models on optimised hardware in the cloud without
+            worrying about expenses.
+          </p>
+        </div>
+      </section>
+
+      <section class="container" id="deploy-models">
+        <div class="cont-text">
+          <p class="section-title">Deployment at your Fingertips</p>
+          <p class="section-desc">
+            Serve your models from the cloud with a single click of a button. No
+            server configuration needed.
+          </p>
+        </div>
+        <div class="cont-image">
+          <img src="images/deploy.png" alt="deploy" />
+        </div>
+      </section>
+
+      <section class="container" id="integrate-models">
+        <div class="cont-image">
+          <img src="images/integrate.png" alt="integrate" />
+        </div>
+        <div class="cont-text">
+          <p class="section-title">Integration - without the fuss</p>
+          <p class="section-desc">
+            Serve your cloud-hosted models using the simple MLBlocks API in a
+            language of your choice.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div id="contact">
+      <p id="contact-title">
+        Integrate Machine Learning in your apps with ease!
+      </p>
+      <p id="contact-subtitle">Sign up today!</p>
+
+      <div id="contact-buttons">
+        <button id="contact-sign-up-button">
+          SIGN UP FOR BETA
+          <i
+            class="fas fa-chevron-right"
+            style="font-size:12px;padding-left: 10px;"
+          ></i>
+        </button>
+        <!-- <button id="contact-demo-button">SCHEDULE DEMO <i class="fas fa-play" style="font-size:12px;padding-left: 10px;"></i></button> -->
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-social">
+        <a href="https://twitter.com/mlblocksHQ" target="blank_"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://medium.com/sigmoid" target="blank_"
+          ><i class="fab fa-medium-m"></i
+        ></a>
+      </div>
+      <p>
+        <i
+          style="color: #ebb339;padding: 0 5px;font-size: 15px;"
+          class="fas fa-code"
+        ></i>
+        with
+        <i
+          style="color: #ff6b6b; padding: 0 5px;font-size: 15px;"
+          class="fas fa-heart"
+        ></i>
+        by <span>mlblocks</span> &copy; 2018
+      </p>
+    </div>
+  </body>
 </html>

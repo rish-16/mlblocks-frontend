@@ -1,0 +1,124 @@
+html,
+body {
+  height: 100%;
+  font-family: Raleway, Avenir Next;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#divider {
+  width: 250px;
+  height: 1px;
+  background-color: black;
+  opacity: 0.1;
+  margin: 20px auto;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 4000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#header #logo-header {
+  display: flex;
+  flex-direction: row;
+  margin: auto 7%;
+}
+
+#header #logo-header #logo-text {
+  height: 25px;
+  font-size: 20px;
+  border-bottom: 5px solid royalblue;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+#header #login-button {
+  width: 115px;
+  height: 45px;
+  border: none;
+  font-family: Raleway, Avenir Next;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background-color: royalblue;
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  margin: auto 7%;
+}
+
+#login-button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+#hero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(245, 243, 243);
+  text-align: center;
+}
+
+#hero #hero-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(168, 167, 167);
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  color: royalblue;
+}
+
+#hero #hero-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 7px auto;
+}
+
+#hero #hero-container p {
+  padding: 15px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(133, 129, 129);
+  cursor: pointer;
+}
