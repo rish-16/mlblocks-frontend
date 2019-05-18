@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
 
+  const productTab = document.getElementById("product");
+  const storyTab = document.getElementById("story");
+  const teamTab = document.getElementById("team");
+
+  productTab.addEventListener("click", function() {
+    console.log("product");
+  });
+
   window.onscroll = e => {
     if ($(window).scrollTop() > 0) {
       header.style.backgroundColor = "white";

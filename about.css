@@ -71,7 +71,7 @@ a {
   width: 115px;
   height: 45px;
   border: none;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   font-weight: bold;
   font-size: 16px;
   color: white;
@@ -102,12 +102,11 @@ a {
 #hero #hero-title {
   font-size: 50px;
   font-weight: 700;
-  color: rgb(168, 167, 167);
-  word-spacing: 10px;
+  color: royalblue;
 }
 
 #hero #hero-title span {
-  color: royalblue;
+  color: rgb(168, 167, 167);
 }
 
 #hero #hero-container {
@@ -123,6 +122,11 @@ a {
   font-weight: 500;
   color: rgb(133, 129, 129);
   cursor: pointer;
+}
+
+#hero #hero-container .chosen {
+  color: royalblue;
+  font-weight: bold;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
