@@ -7,6 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productTab.addEventListener("click", function() {
     console.log("product");
+    productTab.classList.toggle("chosen");
+    storyTab.classList.remove("chosen");
+    teamTab.classList.remove("chosen");
+  });
+
+  storyTab.addEventListener("click", function() {
+    console.log("story");
+    productTab.classList.remove("chosen");
+    storyTab.classList.toggle("chosen");
+    teamTab.classList.remove("chosen");
+  });
+
+  teamTab.addEventListener("click", function() {
+    console.log("team");
+    productTab.classList.remove("chosen");
+    storyTab.classList.remove("chosen");
+    teamTab.classList.toggle("chosen");
   });
 
   window.onscroll = e => {

@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   padding: 0;
   margin: 0;
 }
@@ -78,14 +78,15 @@ a {
   margin: auto 0;
   font-size: 18px;
   font-weight: bold;
-  color: #d8d9da;
+  color: #bababb;
+  cursor: pointer;
 }
 
 #header #navbar #login-button {
   width: 120px;
   height: 45px;
   border: none;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   font-weight: bold;
   font-size: 16px;
   color: white;
@@ -156,7 +157,7 @@ a {
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   margin: 0 15px;
   margin-top: 20px;
   padding: 0 15px;
@@ -171,7 +172,7 @@ a {
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   margin: 0 15px;
   margin-top: 20px;
   padding: 0 15px;
@@ -356,7 +357,7 @@ a {
   height: auto;
   background-color: #fff;
   text-align: left;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   font-size: 16px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -458,7 +459,7 @@ a {
   padding-bottom: 15px;
   padding-top: 10px;
   user-select: text;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   overflow: scroll;
 }
 
@@ -527,7 +528,7 @@ a {
 .uc-card .uc-get-started {
   width: 150px;
   height: 45px;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   font-size: 15px;
   font-weight: bold;
   color: white;
@@ -546,7 +547,7 @@ a {
   width: auto;
   height: 45px;
   padding: 0 20px;
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   font-size: 21px;
   font-weight: bold;
   color: white;
@@ -605,7 +606,7 @@ a {
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   padding: 0 15px;
   margin: 10px 0;
 }
@@ -620,7 +621,7 @@ a {
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
-  font-family: Raleway, Avenir Next;
+  font-family: Karla, Avenir Next;
   padding: 0 15px;
   margin: 10px 0;
 }

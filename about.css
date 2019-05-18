@@ -67,8 +67,23 @@ a {
   margin: auto 0;
 }
 
-#header #login-button {
-  width: 115px;
+#header #navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto 7%;
+}
+
+#header #navbar #home {
+  margin: auto 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #bababb;
+  cursor: pointer;
+}
+
+#header #navbar #login-button {
+  width: 120px;
   height: 45px;
   border: none;
   font-family: Karla, Avenir Next;
@@ -78,7 +93,6 @@ a {
   background-color: royalblue;
   border-radius: 3px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  margin: auto 7%;
 }
 
 #login-button:hover {
@@ -102,6 +116,7 @@ a {
 #hero #hero-title {
   font-size: 50px;
   font-weight: 700;
+  letter-spacing: -2px;
   color: royalblue;
 }
 
@@ -124,7 +139,7 @@ a {
   cursor: pointer;
 }
 
-#hero #hero-container .chosen {
+.chosen {
   color: royalblue;
   font-weight: bold;
 }
