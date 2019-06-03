@@ -133,6 +133,10 @@ a {
   font-size: 43px;
 }
 
+#hero #hero-container #hero-subtitle {
+  font-size: 15px;
+}
+
 #hero-buttons {
   display: flex;
   flex-direction: row;
@@ -863,8 +867,6 @@ a {
     width: 80%;
     padding: 0;
     margin: 0 auto;
-    /* font-size: 15px; */
-    /* text-align: center; */
   }
 
   #about #about-left {

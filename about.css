@@ -126,6 +126,7 @@ a {
 }
 
 #hero #hero-container {
+  width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -133,11 +134,16 @@ a {
 }
 
 #hero #hero-container p {
-  padding: 15px 30px;
+  padding: 15px 0;
   font-size: 15px;
   font-weight: 500;
-  color: rgb(133, 129, 129);
+  color: #8395a7;
   cursor: pointer;
+}
+
+#hero #hero-container p:hover {
+  font-weight: bold;
+  color: royalblue;
 }
 
 .chosen {
@@ -213,6 +219,11 @@ a {
   border-bottom: 3px solid royalblue;
   padding: 2px 0;
   font-weight: bold;
+}
+
+#about-team #team-container #right #section-desc span {
+  font-weight: 600;
+  color: #8395a7;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
