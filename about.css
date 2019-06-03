@@ -75,10 +75,10 @@ a {
 }
 
 #header #navbar #home {
-  margin: auto 0;
+  margin: auto 15px;
   font-size: 18px;
   font-weight: bold;
-  color: #bababb;
+  color: #8395a7;
   cursor: pointer;
 }
 
@@ -109,26 +109,27 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgb(245, 243, 243);
+  background-color: white;
   text-align: center;
 }
 
 #hero #hero-title {
-  font-size: 50px;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: -2px;
-  color: royalblue;
+  color: #8395a7;
+  margin-bottom: 15px;
 }
 
-#hero #hero-title span {
-  color: rgb(168, 167, 167);
+#hero #hero-title-span {
+  color: royalblue;
+  font-size: 43px;
 }
 
 #hero #hero-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 7px auto;
+  margin: 0 auto;
 }
 
 #hero #hero-container p {
@@ -148,6 +149,7 @@ a {
 
 #about-team {
   width: 100%;
+  height: auto;
   min-height: 100%;
   background-color: rgb(245, 243, 243);
   display: flex;
@@ -159,8 +161,8 @@ a {
   width: 100%;
   min-height: 100%;
   height: auto;
-  margin: auto 7%;
   display: flex;
+  margin: auto 7%;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -194,7 +196,7 @@ a {
 #about-team #team-container #right #section-title {
   font-size: 25px;
   font-weight: bold;
-  color: rgb(196, 193, 193);
+  color: #8395a7;
   padding-bottom: 20px;
 }
 
@@ -204,7 +206,23 @@ a {
   color: black;
   font-weight: 500;
   font-size: 15px;
-  line-height: 32px;
+  line-height: 37px;
+}
+
+#about-team #team-container #right #section-desc a {
+  border-bottom: 3px solid royalblue;
+  padding: 2px 0;
+  font-weight: bold;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  #about-team #team-container #left {
+    display: none;
+  }
+
+  #about-team #team-container #right {
+    width: 100%;
+  }
+}

@@ -1,30 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
 
-  const productTab = document.getElementById("product");
-  const storyTab = document.getElementById("story");
-  const teamTab = document.getElementById("team");
+  const heroTitleSpan = document.getElementById("hero-title-span");
 
-  productTab.addEventListener("click", function() {
-    console.log("product");
-    productTab.classList.toggle("chosen");
-    storyTab.classList.remove("chosen");
-    teamTab.classList.remove("chosen");
+  var typewriter = new Typewriter(heroTitleSpan, {
+    loop: false,
+    typingSpeed: 100
   });
 
-  storyTab.addEventListener("click", function() {
-    console.log("story");
-    productTab.classList.remove("chosen");
-    storyTab.classList.toggle("chosen");
-    teamTab.classList.remove("chosen");
-  });
-
-  teamTab.addEventListener("click", function() {
-    console.log("team");
-    productTab.classList.remove("chosen");
-    storyTab.classList.remove("chosen");
-    teamTab.classList.toggle("chosen");
-  });
+  typewriter.typeString("Simplified.").start();
 
   window.onscroll = e => {
     if ($(window).scrollTop() > 0) {

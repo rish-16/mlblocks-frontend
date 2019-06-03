@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const header = document.getElementById("header");
 
-  const signInButton = document.getElementById("login-button");
+  const signInButton = document.getElementById("header-login-button");
   const signUpButton = document.getElementById("sign-up-button");
 
   const contactSignUpbutton = document.getElementById("contact-sign-up-button");

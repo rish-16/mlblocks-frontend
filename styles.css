@@ -74,15 +74,15 @@ a {
   margin: auto 7%;
 }
 
-#header #navbar #about {
-  margin: auto 0;
+#header #navbar #header-about {
+  margin: auto 15px;
   font-size: 18px;
   font-weight: bold;
-  color: #bababb;
+  color: #8395a7;
   cursor: pointer;
 }
 
-#header #navbar #login-button {
+#header #navbar #header-login-button {
   width: 120px;
   height: 45px;
   border: none;
@@ -125,19 +125,12 @@ a {
   font-weight: bold;
   font-size: 32px;
   color: #8395a7;
-  /* color: white; */
   margin-bottom: 15px;
 }
 
 #hero #hero-container #hero-title #hero-title-span {
   color: royalblue;
   font-size: 43px;
-}
-
-#hero #hero-container #hero-subtitle {
-  font-size: 19px;
-  /* color: #7b7f83; */
-  color: #515355;
 }
 
 #hero-buttons {
