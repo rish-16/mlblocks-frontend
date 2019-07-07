@@ -260,6 +260,9 @@ a {
   height: auto;
   padding-top: 30px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .cat {
@@ -269,7 +272,7 @@ a {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 0 0 50px 0;
+  margin: 0 0 60px 0;
 }
 
 .cat .cat-left {
@@ -297,6 +300,8 @@ a {
 .cat .cat-right .cat-right-text {
   width: 100%;
   height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .cat .cat-right .cat-right-text .cat-title {
