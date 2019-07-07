@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const heroTitleSpan = document.getElementById("hero-title-span");
 
+  const teamTab = document.getElementById('team')
+  const productTab = document.getElementById('product')
+  const storyTab = document.getElementById('story')
+
+  teamTab.addEventListener('click', () => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: document.body.clientHeight
+    }, 500);
+  })
+
+  productTab.addEventListener('click', () => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: document.body.clientHeight * 2
+    }, 500);
+  })
+
   var typewriter = new Typewriter(heroTitleSpan, {
     loop: false,
     typingSpeed: 100
