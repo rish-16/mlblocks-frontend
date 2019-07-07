@@ -344,4 +344,16 @@ a {
   .cat .cat-right, .cat .cat-left {
     width: 100%;
   }
+
+  .cat .cat-right .cat-right-text .cat-title {
+    font-size: 20px;
+  }
+
+  .cat .cat-right .cat-right-text .cat-desc {
+    font-size: 15px;
+  }
+
+  #product-tab #product-catalogue {
+    width: 75%;
+  }
 }
