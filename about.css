@@ -231,8 +231,15 @@ a {
 #product-tab {
   width: 100%;
   height: 100%;
-  background-color: #f8f8f8;
+  background-color: white;
   text-align: center;
+}
+
+#product-tab #divider {
+  width: 300px;
+  height: 2px;
+  border-color: #dfe4ea;
+  margin: 30px auto;
 }
 
 #product-tab #product-header {
@@ -244,11 +251,66 @@ a {
 
 #product-tab #product-desc {
   font-size: 19px;
-  color: rgb(41, 41, 41);
+  color: black;
+  padding-bottom: 20px;
 }
 
 #product-tab #product-catalogue {
-  
+  width: 65%;
+  height: auto;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+.cat {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 0 50px 0;
+}
+
+.cat .cat-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cat .cat-left .cat-left-img {
+  height: 200px;
+  margin: 0 auto;
+}
+
+.cat .cat-right {
+  width: 50%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cat .cat-right .cat-right-text {
+  width: 100%;
+  height: auto;
+}
+
+.cat .cat-right .cat-right-text .cat-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #8395a7;
+  padding-bottom: 10px;
+}
+
+.cat .cat-right .cat-right-text .cat-desc {
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -259,6 +321,22 @@ a {
   }
 
   #about-team #team-container #right {
+    width: 100%;
+  }
+
+  #product-tab #product-header {
+    font-size: 25px;
+    font-weight: bold;
+    color: #8395a7;
+    padding: 50px 0 10px 0;
+  }
+  
+  #product-tab #product-desc {
+    font-size: 15px;
+    color: rgb(41, 41, 41);
+  }
+
+  .cat .cat-right, .cat .cat-left {
     width: 100%;
   }
 }
