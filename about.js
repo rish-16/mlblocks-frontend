@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productTab.addEventListener('click', () => {
     $([document.documentElement, document.body]).animate({
-      scrollTop: document.body.clientHeight * 2
+      scrollTop: $("#product-header").offset().top - 100
     }, 500);
   })
 

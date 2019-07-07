@@ -231,10 +231,24 @@ a {
 #product-tab {
   width: 100%;
   height: 100%;
-  background-color: rgb(250, 250, 250);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+#product-tab #product-header {
+  font-size: 35px;
+  font-weight: bold;
+  color: #8395a7;
+  padding: 50px 30px 10px 30px;
+}
+
+#product-tab #product-desc {
+  font-size: 19px;
+  color: rgb(41, 41, 41);
+}
+
+#product-tab #product-catalogue {
+  
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
