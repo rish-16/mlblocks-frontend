@@ -1,5 +1,5 @@
 html, body {
-    font-family: Raleway, Avenir Next;
+    font-family: Karla, Avenir Next;
     padding: 0;
     margin: 0;
     background-color: #edf1f5;
@@ -57,15 +57,15 @@ a {
 }
 
 #hero #title {
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 700;
-    padding: 70px 15px 0 15px;
+    padding: 70px 0px 0 0px;
 }
 
 #hero #subtitle {
     font-size: 16px;
     color: #818181;
-    padding: 15px 35px 40px 35px;
+    padding: 15px 0px 40px 0px;
 }
 
 #hero #social {
