@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         firebase.auth().signInWithEmailAndPassword(email.value, password.value)
         .then((user) => {
             console.log(user)
-            window.location = 'comingsoon.html'
+            window.location = 'project.html'
         })
         .catch((err) => {
             console.log(err.message)

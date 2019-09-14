@@ -223,8 +223,6 @@ ModelCard.prototype.handleDeletion = function(workspace) {
 
         // http.send(formData)
 
-        mixpanel.track('Model deleted')
-
         // Delete from Database
         const ref = firebase.database().ref()
         ref.child('Projects').child(this.uID).child(this.pID).remove()
@@ -572,27 +570,25 @@ Project.prototype.handleUpload = function() {
     const DBref = firebase.database().ref()
     const STref = firebase.storage().ref()
 
-    // var http = new XMLHttpRequest()
-    // // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
-    // var url = 'http://10.180.9.33:5000' + this.pID + '/delete'
+    var http = new XMLHttpRequest()
+    // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
+    var url = 'http://localhost:5000' + this.pID + '/delete'
 
-    // http.open('POST', url, true)
+    http.open('POST', url, true)
 
-    // // Send the proper header information along with the request
-    // //http.setRequestHeader('Content-type', 'multipart/form-data')
-    // var formData = new FormData();
-    // formData.append("userID", this.projectUser);
+    // Send the proper header information along with the request
+    //http.setRequestHeader('Content-type', 'multipart/form-data')
+    var formData = new FormData();
+    formData.append("userID", this.projectUser);
 
-    // http.onreadystatechange = function() {
-    //     // Call a function when the state changes
-    //     if (http.readyState == 4 && http.status == 200) {
-    //         window.alert(http.responseText)
-    //     }
-    // }
+    http.onreadystatechange = function() {
+        // Call a function when the state changes
+        if (http.readyState == 4 && http.status == 200) {
+            window.alert(http.responseText)
+        }
+    }
 
-    // http.send(formData)
-
-    mixpanel.track('Project created')
+    http.send(formData)
 
     projectData = {
         'ID': this.projectID,
