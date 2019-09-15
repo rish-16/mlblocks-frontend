@@ -163,7 +163,6 @@ ModelCard.prototype.handleDeployment = function() {
         if (this.tStatus == false) {
             var task = window.confirm('The model is untrained. Are you sure you want to deploy it?')
             if (task) {
-                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -172,7 +171,6 @@ ModelCard.prototype.handleDeployment = function() {
                 var msg = new MessageCard('Model has been successfully deployed.')
                 msg.addMessage()
             } else if (this.tStatus == true) {
-                mixpanel.track('Model activated')
                 this.status = 'Active'
                 this.cardStatus.style.color = '#10ac84'
                 this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
@@ -183,7 +181,6 @@ ModelCard.prototype.handleDeployment = function() {
             }
         }
     } else if (this.status == 'Active') {
-        mixpanel.track('Model deactivated')
         this.status = 'Inactive'
         this.cardStatus.innerHTML = this.status + ' <i class="fas fa-circle"></i>'
         this.cardStatus.style.color = '#ee5253'
@@ -507,7 +504,6 @@ ClassCard.prototype.addClassCard = function(workspace, cardIDarray, cardObjects)
     this.deleteButton.classList += 'delete-button'
 
     this.deleteButton.addEventListener('click', () => {
-        mixpanel.track('Class deleted')
         console.log('Deleting card')
         workspace.removeChild(card)
         var index = cardIDarray.indexOf(card.id);
@@ -570,25 +566,34 @@ Project.prototype.handleUpload = function() {
     const DBref = firebase.database().ref()
     const STref = firebase.storage().ref()
 
-    var http = new XMLHttpRequest()
+    // var http = new XMLHttpRequest()
     // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
-    var url = 'http://localhost:5000' + this.pID + '/delete'
+    var url = 'http://localhost:5000' + this.pID + '/train'
 
-    http.open('POST', url, true)
+    // http.open('POST', url, true)
 
     // Send the proper header information along with the request
     //http.setRequestHeader('Content-type', 'multipart/form-data')
-    var formData = new FormData();
-    formData.append("userID", this.projectUser);
+    // var formData = new FormData();
+    // formData.append("userID", this.projectUser);
 
-    http.onreadystatechange = function() {
-        // Call a function when the state changes
-        if (http.readyState == 4 && http.status == 200) {
-            window.alert(http.responseText)
-        }
+    formData = {
+        'userID': this.projectUser,
+        'modelID': this.projectID
     }
 
-    http.send(formData)
+    // http.onreadystatechange = function() {
+    //     // Call a function when the state changes
+    //     if (http.readyState == 4 && http.status == 200) {
+    //         window.alert(http.responseText)
+    //     }
+    // }
+
+    $.post(url, formData, function(data, status, jqXHR) {
+        console.log('Sending data to localhost')
+    })
+
+    // http.send(formData)
 
     projectData = {
         'ID': this.projectID,
@@ -607,7 +612,7 @@ Project.prototype.handleUpload = function() {
         for (var j = 0; j < this.projectTrainingData[i].length; j++) {
             var uploadTask = STref.child('Projects').child(this.projectID).child(this.projectClasses[i]).child('image' + j + '.jpg').put(this.projectTrainingData[i][j])
             uploadTask.on('state_changed', (snapshot) => {
-
+                console.log(snapshot)
             }, (error) => {
                 console.log(error)
             }, () => {
@@ -647,8 +652,6 @@ MessageCard.prototype.addMessage = function() {
 
     card.appendChild(p)
     document.body.appendChild(card)
-
-    mixpanel.track('Message: ' + this.message)
 
     setTimeout(function() {
         document.body.removeChild(card)

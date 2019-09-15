@@ -85,13 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gridViewButton.onclick = () => {
         viewType = 'GRID'
         loadProjects('value', userID, viewType)
-        mixpanel.track('Grid View chosen')
     }
 
     listViewButton.onclick = () => {
         viewType = 'LIST'
         loadProjects('value', userID, viewType)
-        mixpanel.track('List View chosen')
     }
 
     function showEmptyDB() {
@@ -137,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (conf) {
             var task = firebase.auth().signOut()
             task.then(() => {
-                mixpanel.track('User logout')
                 console.log('Logout successful')
                 window.location = 'index.html'
             })
@@ -148,13 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createModelButton.onclick = () => {
-        mixpanel.track('Creating model')
         newProjectModal.style.display = 'block'
         // saveProjectButton.disabled = false
     }
 
     imageBlock.onclick = () => {
-        mixpanel.track('Image data type chosen')
         imageBlock.style.opacity = '1'
         textBlock.style.opacity = '0.5'
         audioBlock.style.opacity = '0.5'
@@ -163,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Coming soon
     textBlock.onclick = () => {
-        mixpanel.track('Text data type chosen')
         var msg = new MessageCard('Coming soon!')
         msg.addMessage()
         imageBlock.style.opacity = '1'
@@ -172,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Coming soon
     audioBlock.onclick = () => {
-        mixpanel.track('Audio data type chosen')
         var msg = new MessageCard('Coming soon!')
         msg.addMessage()
         imageBlock.style.opacity = '1'
@@ -180,14 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addClassButton.onclick = () => {
-        mixpanel.track('Add class')
         var card = new ClassCard()
         card.addClassCard(tdcContainerClassCards, classIDarray, classObjects)
         classObjects.push(card)
     }
 
     saveProjectButton.onclick = () => {
-        mixpanel.track('Model saved')
         // Check if all information has been updated
         if (newProjectTitle.value.length > 1 && dataBlockChosen != null && classObjects.length > 0) {
             var ID = makeURL()
@@ -231,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     cancelButton.onclick = () => {
-        mixpanel.track('Model building cancelled')
         var task = window.confirm('Are you sure you want to scrap this project? This cannot be undone.')
         if (task) {
             newProjectTitle.value = ''
