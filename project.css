@@ -37,6 +37,7 @@ a {
     height: 80px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     z-index: 500;
 }
@@ -57,45 +58,30 @@ a {
 }
 
 #header #user-info {
-    width: 30%;
+    width: auto;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-}
-
-#header #user-info #marketplace {
-    margin: auto 15px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#header #user-info #notifications {
-    margin: auto 0;
-    font-size: 20px;
-    color: rgb(161, 161, 161);
-}
-
-#header #user-info #notifications:hover {
-    color: royalblue;
-    transition: 0.5s;
+    justify-content: left;
+    margin-right: 30px;
 }
 
 #header #user-info #logout-button {
     width: 80px;
     height: 35px;
-    border: 1px solid royalblue;
-    color: rgba(85, 81, 81, 0.75);
     font-size: 13px;
     font-weight: 500;
+    margin: auto 0;
+    background-color: royalblue;
+    color: white;
     font-family: Karla, Avenir Next;
     border-radius: 100px;
-    margin: auto 0;
 }
 
 #header #user-info #logout-button:hover {
     background-color: royalblue;
     color: white;
+    cursor: pointer;
     opacity: 0.75;
     transition: 0.5s;
 }
@@ -142,7 +128,6 @@ a {
     right: 0;
     bottom: 0;
     top: 80px;
-    /* background-color: #DEE2E8; */
     background-color: white;
     overflow: scroll;
 }
@@ -203,6 +188,7 @@ a {
 #project-workbench #workbench-tools #tools div #create-project-button:hover {
     opacity: 0.8;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     transition: 0.5s;
 }
 
