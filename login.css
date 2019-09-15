@@ -118,20 +118,23 @@ a {
 }
 
 #left #login-buttons #submit {
-    width: 125px;
-    height: 50px;
+    width: 120px;
+    height: 40px;
+    margin: auto 0;
     background-color: royalblue;
     color: white;
-    font-family: Karla, Avenir Next;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: bold;
-    border-radius: 3px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    margin: auto 0;
+    font-family: Karla, Avenir Next;
+    border-radius: 2px;
+    border-radius: 100px;
 }
 
 #left #login-buttons #submit:hover {
+    opacity: 0.8;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: 0.5s;
 }
 
 #left #login-buttons #register-button {
