@@ -65,12 +65,6 @@ ModelCard.prototype.addModel = function(container) {
     // var cardDisplayP = document.createElement('p')
     // cardDisplayP.innerHTML = '<i class="far fa-images"></i>'
 
-    var trainingLoader = document.createElement('div')
-    trainingLoader.classList += 'model-training-loader'
-
-    var trainingLoaderBar = document.createElement('div')
-    trainingLoaderBar.classList += 'model-training-loader-bar'
-
     var cardTitle = document.createElement('p')
     cardTitle.classList += 'model-title'
     cardTitle.innerText = this.title
@@ -134,9 +128,6 @@ ModelCard.prototype.addModel = function(container) {
     this.card.appendChild(cardTitle)
     this.card.appendChild(cardClasses)
     this.card.appendChild(statusNode)
-
-    trainingLoader.appendChild(trainingLoaderBar)
-    this.card.appendChild(trainingLoader)
 
     this.card.appendChild(cardDivider)
     this.card.appendChild(cardType)

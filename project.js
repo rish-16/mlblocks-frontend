@@ -146,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createModelButton.onclick = () => {
         newProjectModal.style.display = 'block'
-        // saveProjectButton.disabled = false
     }
 
     imageBlock.onclick = () => {
