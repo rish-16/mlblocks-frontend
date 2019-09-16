@@ -557,28 +557,13 @@ Project.prototype.handleUpload = function() {
     const DBref = firebase.database().ref()
     const STref = firebase.storage().ref()
 
-    // var http = new XMLHttpRequest()
     // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
     var url = 'http://localhost:5000' + this.pID + '/train'
-
-    // http.open('POST', url, true)
-
-    // Send the proper header information along with the request
-    //http.setRequestHeader('Content-type', 'multipart/form-data')
-    // var formData = new FormData();
-    // formData.append("userID", this.projectUser);
 
     formData = {
         'userID': this.projectUser,
         'modelID': this.projectID
     }
-
-    // http.onreadystatechange = function() {
-    //     // Call a function when the state changes
-    //     if (http.readyState == 4 && http.status == 200) {
-    //         window.alert(http.responseText)
-    //     }
-    // }
 
     $.post(url, formData, function(data, status, jqXHR) {
         console.log('Sending data to localhost')
