@@ -558,18 +558,6 @@ Project.prototype.handleUpload = function() {
     const STref = firebase.storage().ref()
 
     // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.projectID + '/train'
-    var url = 'http://localhost:5000' + this.pID + '/train'
-
-    formData = {
-        'userID': this.projectUser,
-        'modelID': this.projectID
-    }
-
-    $.post(url, formData, function(data, status, jqXHR) {
-        console.log('Sending data to localhost')
-    })
-
-    // http.send(formData)
 
     projectData = {
         'ID': this.projectID,
@@ -588,15 +576,24 @@ Project.prototype.handleUpload = function() {
         for (var j = 0; j < this.projectTrainingData[i].length; j++) {
             var uploadTask = STref.child('Projects').child(this.projectID).child(this.projectClasses[i]).child('image' + j + '.jpg').put(this.projectTrainingData[i][j])
             uploadTask.on('state_changed', (snapshot) => {
-                console.log(snapshot)
             }, (error) => {
                 console.log(error)
-            }, () => {
-                console.log('Data sent')
-            })
+            }, () => {})
         }
         DBref.child('Projects').child(this.projectUser).child(this.projectID).child('CLASSES').child(this.projectClasses[i]).set(this.projectTrainingData[i].length)
     }
+
+    var url = 'http://127.0.0.1:5000/train'
+    console.log(url)
+
+    formData = {
+        'userID': this.projectUser,
+        'modelID': this.projectID
+    }
+
+    $.post(url, formData, function(data, status, jqXHR) {
+        console.log(data)
+    })
 
     console.log('Project Sent')
     var msg = new MessageCard('Data successfully saved!')
