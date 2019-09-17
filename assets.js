@@ -417,7 +417,6 @@ ModelCard.prototype.handleDeletion = function(workspace) {
                 })
             }
         }
-
         
         workspace.removeChild(this.card)
         var msg = new MessageCard('Project successfully deleted!')
