@@ -191,25 +191,25 @@ ModelCard.prototype.handleDeletion = function(workspace) {
     }
     if (task) {
 
-        // var http = new XMLHttpRequest()
-        // var url = 'http://mlblocks-env.jimcncwcc4.ap-southeast-1.elasticbeanstalk.com/' + this.pID + '/delete'
-        // var url = 'http://10.180.9.33:5000' + this.pID + '/delete'
+        var http = new XMLHttpRequest()
+        var url = 'http://mlblocks.herokuapp.com/' + this.pID + '/delete'
+        var url = 'http://mlblocks.herokuapp.com/' + this.pID + '/delete'
 
-        // http.open('POST', url, true)
+        http.open('POST', url, true)
 
-        // Send the proper header information along with the request
-        //http.setRequestHeader('Content-type', 'multipart/form-data')
-        // var formData = new FormData();
-        // formData.append("userID", this.uID);
+        Send the proper header information along with the request
+        http.setRequestHeader('Content-type', 'multipart/form-data')
+        var formData = new FormData();
+        formData.append("userID", this.uID);
 
-        // http.onreadystatechange = function() {
-        //     // Call a function when the state changes
-        //     if (http.readyState == 4 && http.status == 200) {
-        //         window.alert(http.responseText)
-        //     }
-        // }
+        http.onreadystatechange = function() {
+            // Call a function when the state changes
+            if (http.readyState == 4 && http.status == 200) {
+                window.alert(http.responseText)
+            }
+        }
 
-        // http.send(formData)
+        http.send(formData)
 
         // Delete from Database
         const ref = firebase.database().ref()
@@ -558,7 +558,7 @@ Project.prototype.handleUpload = function() {
         DBref.child('Projects').child(this.projectUser).child(this.projectID).child('CLASSES').child(this.projectClasses[i]).set(this.projectTrainingData[i].length)
     }
 
-    var url = 'http://127.0.0.1:5000/train'
+    var url = 'http://mlblocks.herokuapp.com//train'
     console.log(url)
 
     formData = {
