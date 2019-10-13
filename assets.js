@@ -197,7 +197,7 @@ ModelCard.prototype.handleDeletion = function(workspace) {
 
         http.open('POST', url, true)
 
-        Send the proper header information along with the request
+        // Send the proper header information along with the request
         http.setRequestHeader('Content-type', 'multipart/form-data')
         var formData = new FormData();
         formData.append("userID", this.uID);
