@@ -545,6 +545,7 @@ Project.prototype.handleUpload = function() {
         'TRAINED': this.projectTrainingStatus,
         'DOC': this.dateCreated
     }
+    
     DBref.child('Projects').child(this.projectUser).child(this.projectID).set(projectData)
 
     for (var i = 0; i < this.projectTrainingData.length; i++) {
@@ -555,10 +556,12 @@ Project.prototype.handleUpload = function() {
                 console.log(error)
             }, () => {})
         }
+        console.log('Sent up training data for current class')
         DBref.child('Projects').child(this.projectUser).child(this.projectID).child('CLASSES').child(this.projectClasses[i]).set(this.projectTrainingData[i].length)
     }
 
-    var url = 'http://mlblocks.herokuapp.com//train'
+    // var url = 'http://mlblocks.herokuapp.com/train'
+    var url = "http://127.0.0.1:5000/train"
     console.log(url)
 
     formData = {
