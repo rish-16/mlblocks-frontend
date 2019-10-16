@@ -545,33 +545,49 @@ Project.prototype.handleUpload = function() {
         'TRAINED': this.projectTrainingStatus,
         'DOC': this.dateCreated
     }
+
+    var numClasses = this.projectClasses.length
+    var uploadCounter = 0
     
     DBref.child('Projects').child(this.projectUser).child(this.projectID).set(projectData)
 
     for (var i = 0; i < this.projectTrainingData.length; i++) {
         for (var j = 0; j < this.projectTrainingData[i].length; j++) {
-            var uploadTask = STref.child('Projects').child(this.projectID).child(this.projectClasses[i]).child('image' + j + '.jpg').put(this.projectTrainingData[i][j])
-            uploadTask.on('state_changed', (snapshot) => {
-            }, (error) => {
-                console.log(error)
-            }, () => {})
+            var fileData = this.projectTrainingData[i][j]
+            var fileName = fileData['name'].split(".")
+            var extension = fileName[1]
+            console.log(extension)
+
+            if (['jpg', 'jpeg'].includes(extension)) {
+                var uploadTask = STref.child('Projects').child(this.projectID).child(this.projectClasses[i]).child('image' + j + '.' + extension).put(this.projectTrainingData[i][j])
+                uploadTask.on('state_changed', (snapshot) => {
+                }, (error) => {
+                    console.log(error)
+                }, () => {})
+            }
         }
         console.log('Sent up training data for current class')
         DBref.child('Projects').child(this.projectUser).child(this.projectID).child('CLASSES').child(this.projectClasses[i]).set(this.projectTrainingData[i].length)
+        uploadCounter += 1
+        console.log(`Number of classes sent: ${uploadCounter}`)
     }
 
-    // var url = 'http://mlblocks.herokuapp.com/train'
-    var url = "http://127.0.0.1:5000/train"
-    console.log(url)
+    if (uploadCounter == numClasses) {
+        // var url = "http://127.0.0.1:5000/train"
+        var url = 'http://mlblocks.herokuapp.com/train'
+        console.log(url)
 
-    formData = {
-        'userID': this.projectUser,
-        'modelID': this.projectID
+        formData = {
+            'userID': this.projectUser,
+            'modelID': this.projectID
+        }
+
+        $.post(url, formData, function(data, status, jqXHR) {
+            console.log(data)
+        })
+    } else {
+        console.log('Waiting to finish sending data to Firebase')
     }
-
-    $.post(url, formData, function(data, status, jqXHR) {
-        console.log(data)
-    })
 
     console.log('Project Sent')
     var msg = new MessageCard('Data successfully saved!')
