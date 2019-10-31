@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const teamTab = document.getElementById('team')
   const productTab = document.getElementById('product')
-  const storyTab = document.getElementById('story')
+  // const storyTab = document.getElementById('story')
 
   teamTab.addEventListener('click', () => {
     $([document.documentElement, document.body]).animate({
